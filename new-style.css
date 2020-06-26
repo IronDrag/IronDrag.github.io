@@ -1,3 +1,6 @@
 input {
-outline: solid red;
+  outline: solid red;
+}
+input,button {
+  background-color: #ccc;
 }
