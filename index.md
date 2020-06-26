@@ -9,7 +9,9 @@ Syntax highlighted code block
 Tost
 
 {{ headline }}
-
+{{ page.title }}
+{{ page.headline }}
+{{ content }}
 END/Tost
 
 - Bulleted
