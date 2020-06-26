@@ -6,12 +6,13 @@ Syntax highlighted code block
 ## Header 2
 ### Header 3
 
-Tost
+Tost-text
 
 {{ headline }}
 {{ page.title }}
 {{ page.headline }}
 {{ content }}
+
 END/Tost
 
 - Bulleted
