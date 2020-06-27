@@ -2,6 +2,8 @@
 layout: default
 ---
 
+Additional info 
+
 Syntax highlighted code block
 
 # Header 1
