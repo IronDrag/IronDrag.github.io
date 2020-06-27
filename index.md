@@ -1,6 +1,6 @@
---
+---
 layout: default
---
+---
 
 Syntax highlighted code block
 
