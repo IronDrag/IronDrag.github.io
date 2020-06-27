@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Hello
 ---
 
 Hello from gh-pages
@@ -14,6 +15,7 @@ Tost-text
 
 {{ headline }}
 {{ page.title }}
+{{ title }}
 {{ page.headline }}
 {{ content }}
 
