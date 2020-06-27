@@ -1,6 +1,8 @@
---
+---
 layout: default
---
+---
+
+Hello from gh-pages
 
 Syntax highlighted code block
 
