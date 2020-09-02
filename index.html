@@ -18,13 +18,17 @@
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </section>
     
-<form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST">
+<form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe">
     <h2>My Google Form</h2>
     <input type="text" name="entry.1283908172" placeholder="Enter your text..."><br>
     <label><input type="radio" name="entry.22642542" value="Главный вариант">Главный вариант</label><br>
     <label><input type="radio" name="entry.22642542" value="Второстепенный">Второстепенный</label><br>
+    <label><input type="radio" name="entry.22642542" value="Отстранённый">Отстранённый</label><br>
     <input type="submit">
 </form>
+
+<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='/'; "></iframe>
+
 <script data-cfasync="false" src="form-submission-handler.js"></script>
 </body>
 </html>
