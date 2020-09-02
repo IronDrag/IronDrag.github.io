@@ -42,11 +42,14 @@
     });
 
     // add form-specific values into the data
+    
+    /*
     formData.formDataNameOrder = JSON.stringify(fields);
     formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
     formData.formGoogleSendEmail
       = form.dataset.email || ""; // no email by default
-
+    */
+    
     return {data: formData, honeypot: honeypot};
   }
 
@@ -69,6 +72,7 @@
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
+           console.log("Send successful!!!");
           form.reset();
           var formElements = form.querySelector(".form-elements")
           if (formElements) {
