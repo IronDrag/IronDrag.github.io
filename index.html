@@ -6,6 +6,17 @@
     <script>
         var submitted = false;
     </script>
+    <style>
+        .thx-form {
+           display: none;
+           opacity: 0; 
+           transition: all 1s;
+        }
+        .thx-form__on {
+            display: block;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 <header style="/*position:absolute; top:0;*/ background-color: #24292e; color: #fff;">
@@ -20,8 +31,8 @@
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </section>
-    
-<form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="submitted = true;">
+<div class="thx-form">Thanks for filling out the contact form</div>
+<form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="(function(){submitted = true; alert('tost'); let thx-form = document.querySelector(".thx-form"); thx-form.classList.toggle("thx-form__on"); setTimeout(function(){thx-form.classList.toggle("thx-form__on");},5000); })()">
     <h2>My Google Form</h2>
     <input type="text" name="entry.1283908172" placeholder="Enter your text..."><br>
     <label><input type="radio" name="entry.22642542" value="Главный вариант">Главный вариант</label><br>
