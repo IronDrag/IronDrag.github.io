@@ -34,16 +34,7 @@
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </section>
 <div class="thx-form">Thanks for filling out the contact form</div>
-<form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="
-
-(function(){
-    submitted = true; 
-    let thxForm = document.querySelector('.thx-form'); 
-    thxForm.classList.toggle('thx-form__on'); 
-    setTimeout(function(){ thxForm.classList.toggle('thx-form__on');},10000);
- })()
-
-">
+<form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="submitted = true;">
     <h2>My Google Form</h2>
     <input type="text" name="entry.1283908172" placeholder="Enter your text..."><br>
     <label><input type="radio" name="entry.22642542" value="Главный вариант">Главный вариант</label><br>
@@ -53,7 +44,11 @@
     <input type="submit">
 </form>
 
-<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='/';}"></iframe>
+<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" onload="if(submitted) {
+    /*window.location='/';*/
+    let thxForm = document.querySelector('.thx-form'); 
+    thxForm.classList.toggle('thx-form__on'); 
+    setTimeout(function(){ thxForm.classList.toggle('thx-form__on');},10000); }"></iframe>
 
 <script data-cfasync="false" src="form-submission-handler.js.off"></script>
 </body>
