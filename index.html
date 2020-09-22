@@ -35,12 +35,16 @@
 </section>
 <div class="thx-form">Thanks for filling out the contact form</div>
 <form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="submitted = true;">
-    <h2>My Google Form</h2>
-    <input type="text" name="entry.1283908172" placeholder="Enter your text..."><br>
-    <label><input type="radio" name="entry.22642542" value="Главный вариант">Главный вариант</label><br>
-    <label><input type="radio" name="entry.22642542" value="Второстепенный">Второстепенный</label><br>
-    <label><input type="radio" name="entry.22642542" value="Отстранённый">Отстранённый</label><br>
-    <label><input type="radio" name="entry.22642542" value="Что еще?">Что еще?</label><br>
+    <h2>Contact</h2>
+    <label>E-mail:<input type="email" name="emailAddress" placeholder="Your E-mail" required></label><br>
+    <label>Message:<input type="text" name="entry.1283908172" placeholder="Enter text..."></label><br>
+    <label>Letter subject:
+    <select name="entry.22642542">
+        <option value="Главный вариант">Главный вариант</option>
+        <option value="Второстепенный">Второстепенный</option>
+        <option value="Отстранённый">Отстранённый</option>
+        <option value="Что еще?">Что еще?</option>
+    </select></label>  
     <input type="submit">
 </form>
 
