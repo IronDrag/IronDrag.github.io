@@ -1,8 +1,12 @@
 
+* {
+    box-sizing: border-box;
+}
 header,footer {
+    padding: 15px;
     text-align: center;
     overflow:hidden;
-    background-color:#000;
+    background-color: #24292e;
 }
 header *,
 footer *{
@@ -19,4 +23,10 @@ footer *{
     display: block;
     opacity: 1;
 }
-
+section {
+    /*padding:0 15px 0 15px;*/
+}
+section > div {
+    max-width: 1200px;
+    margin: 0 auto;
+} 
