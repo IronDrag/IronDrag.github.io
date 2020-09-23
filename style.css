@@ -32,3 +32,11 @@ section > div {
     margin: 0 auto;
     margin-bottom: 30px;
 } 
+
+.@1x2 {
+    display: table;
+}
+.@1x2 div.col {
+    width: 50%;
+    display: table-cell;
+}
