@@ -16,7 +16,9 @@ header *,
 footer * {
     color: #fff;
 }
-
+p {
+    padding-right: 30px;
+}
 .g\@1x2 {
     display: table;
 }
