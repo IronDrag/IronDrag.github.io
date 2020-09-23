@@ -2,6 +2,9 @@
 * {
     box-sizing: border-box;
 }
+html,body {
+    font-family: Arial;
+}
 header,footer {
     padding: 15px;
     text-align: center;
