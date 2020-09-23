@@ -36,7 +36,7 @@ section > div {
 .@1x2 {
     display: table;
 }
-.@1x2 div.col {
+.@1x2 .col {
     width: 50%;
     display: table-cell;
 }
