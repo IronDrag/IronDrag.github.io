@@ -9,7 +9,7 @@ header,footer {
     background-color: #24292e;
 }
 header *,
-footer *{
+footer * {
     color: #fff;
 }
 .thx-form {
