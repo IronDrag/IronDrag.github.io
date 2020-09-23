@@ -38,30 +38,42 @@
 <main>
 <section id="About">
     <div>
-        <h2>About</h2>
+        <h2>About</h2>        
         <p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="@1x2">
+            <p class="col">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+            <p class="col">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
     </div>
 </section>
 <section id="Contact">
 <div>
+    <h2>Contact</h2>
     <div class="thx-form">Thanks for filling out the contact form</div>
-    <form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="submitted = true;">
-        <h2>Contact</h2>
-        <label>E-mail:<input type="email" name="emailAddress" placeholder="Your E-mail" required></label><br>
-        <label>Message:<textarea name="entry.1283908172" placeholder="Enter text..."></textarea></label><br>
-        <label>Letter subject:
-        <select name="entry.22642542">
-            <option value="Главный вариант">Главный вариант</option>
-           <option value="Второстепенный">Второстепенный</option>
-           <option value="Отстранённый">Отстранённый</option>
-           <option value="Что еще?">Что еще?</option>
-        </select></label><br>  
-        <input type="submit">
+    <form class="gform col" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="submitted = true;">        
+        <div class="col">
+            <label>E-mail:<input type="email" name="emailAddress" placeholder="Your E-mail" required></label><br>
+            <label>Message:<textarea name="entry.1283908172" placeholder="Enter text..."></textarea></label><br>
+        </div>
+        <div class="col">
+            <label>Letter subject:
+            <select name="entry.22642542">
+                <option value="Главный вариант">Главный вариант</option>
+              <option value="Второстепенный">Второстепенный</option>
+              <option value="Отстранённый">Отстранённый</option>
+              <option value="Что еще?">Что еще?</option>
+            </select></label><br>  
+            <input type="submit">
+        </div>
     </form>
 
     <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" onload="if(submitted) {
