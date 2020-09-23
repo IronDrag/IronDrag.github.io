@@ -1,12 +1,22 @@
-input {
-  outline: solid red;
-}
 
-input,button {
-  background-color: #ccc;
+header,footer {
+    text-align: center;
+    overflow:hidden;
+    background-color:#000;
 }
-
-footer {
- text-align: center;
+header *,
+footer *{
+    color: #fff;
+}
+.thx-form {
+   display: none;
+   opacity: 0; 
+   transition: all 1s;
+   outline: solid black;
+   padding: 15px;
+}
+.thx-form__on {
+    display: block;
+    opacity: 1;
 }
 
