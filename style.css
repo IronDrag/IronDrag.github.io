@@ -13,6 +13,16 @@ header *,
 footer * {
     color: #fff;
 }
+
+.g\@1x2 {
+    display: table;
+}
+.g\@1x2 .col {
+    width: 50%;
+    display: table-cell;
+    vertical-align: top;
+}
+
 .thx-form {
    display: none;
    opacity: 0; 
@@ -24,19 +34,19 @@ footer * {
     display: block;
     opacity: 1;
 }
+
 section {
     /*padding:0 15px 0 15px;*/
 }
+
 section > div {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 30px;
 } 
 
-.g\@1x2 {
-    display: table;
+form textarea {
+    vertical-align: top;
 }
-.g\@1x2 .col {
-    width: 50%;
-    display: table-cell;
-}
+
+
