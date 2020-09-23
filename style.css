@@ -1,6 +1,12 @@
 input {
   outline: solid red;
 }
+
 input,button {
   background-color: #ccc;
 }
+
+footer {
+ text-align: center;
+}
+
