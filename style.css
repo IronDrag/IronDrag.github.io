@@ -23,6 +23,10 @@ footer * {
     vertical-align: top;
 }
 
+.g\@1x2 > * {
+    display: table-row;
+}
+
 .thx-form {
    display: none;
    opacity: 0; 
