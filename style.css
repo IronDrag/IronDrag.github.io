@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 html,body {
+    position: relative;
     font-family: Arial;
 }
 header,footer {
@@ -107,7 +108,9 @@ to { transform: rotate(360deg);}
     display: block;
     opacity: 1;
 }
-
+main {
+position: relative;
+}
 section {
     /*padding:0 15px 0 15px;*/
 }
