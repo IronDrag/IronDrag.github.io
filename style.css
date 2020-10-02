@@ -39,6 +39,7 @@ div.img {
 height: 10em;
 width: 100%;
 display: inline-block;
+margin: 1em 0;
 background-color: #bbb;
 outline: solid #ccc;
 }
