@@ -16,6 +16,11 @@ header *,
 footer * {
     color: #fff;
 }
+
+header h1 a {
+ text-decoration: none;
+}
+
 p {
     padding-right: 30px;
 }
