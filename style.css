@@ -71,4 +71,9 @@ form textarea {
     vertical-align: top;
 }
 
+form input,
+form select,
+form textarea {
+ margin: 5px 0;
 
+}
