@@ -39,7 +39,8 @@ div.img {
 height: 10em;
 width: 100%;
 display: inline-block;
-background-color: #ccc;
+background-color: #bbb;
+outline: solid #ccc;
 }
 
 .overlay-screen {
