@@ -31,7 +31,28 @@ p {
     width: 50%;
     display: table-cell;
     vertical-align: top;
+
 }
+
+.ttO_red {
+ outline: solid red;
+}
+
+.ttO_blue {
+
+ outline: solid blue;
+
+}
+
+.ttO_black {
+ outline: solid black;
+}
+
+
+.ttO_white{
+ outline: solid white;
+}
+
 
 @media (max-width:720px) {
 .g\@1x2 .col {
