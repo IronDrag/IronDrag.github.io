@@ -34,6 +34,30 @@ p {
 
 }
 
+.overlay-screen {
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: #fff;
+ z-index: 999;
+}
+
+.Loading-ico {
+ width: 2em;
+ height: 2em;
+ background-color: #000;
+ animation: 1s linear 0s infinite normal Loading;
+}
+
+@keyframes Loading {
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg);}
+}
+
+
 .ttO_red {
  outline: solid red;
 }
