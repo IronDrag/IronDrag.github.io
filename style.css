@@ -114,6 +114,7 @@ to { transform: rotate(360deg);}
    transition: all 1s;
    outline: solid black;
    padding: 15px;
+   margin-bottom: 5px;
 }
 .thx-form__on {
     display: block;
