@@ -51,7 +51,7 @@ background-color: #ccc;
  align-items: center;
  background-color: #fff;
  opacity: 1;
- transition: opacity 2s;
+ transition: opacity .9s;
  z-index: 999;
 }
 
