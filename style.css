@@ -28,6 +28,22 @@ p {
     vertical-align: top;
 }
 
+@media (max-width:720px) {
+.g\@1x2 .col {
+    display: table-row;
+    }
+}
+
+.to_top {
+    text-align: right;
+}
+.to_top a {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    
+}
+
 .thx-form {
    display: none;
    opacity: 0; 
