@@ -155,6 +155,7 @@ section > div {
 } 
 .gform {
     max-width: 720px;
+    display: table;
     }
 .rES {
  display: table-row;
