@@ -144,7 +144,9 @@ section > div {
     margin-bottom: 30px;
     padding: 15px;
 } 
-
+.gform {
+    max-width: 720px;
+    }
 .cEml,
 .cSbjt{
 width: 50%;
