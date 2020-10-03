@@ -107,6 +107,7 @@ to { transform: rotate(360deg);}
     text-decoration: underline;
     border-color: transparent;
     background-color: transparent;
+    }
 .to_top {
     text-align: right;
 }
