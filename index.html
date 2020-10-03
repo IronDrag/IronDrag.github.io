@@ -91,24 +91,30 @@
     <h2>Contact</h2>
     <div class="thx-form">Thanks for filling out the contact form</div>
     <form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="submitted = true;">        
-        <div class="g@1x2">
-            <div class="col">
-                <label>E-mail:<input type="email" name="emailAddress" placeholder="Your E-mail" required></label><br>
-                <label>Letter subject:
-                   <select name="entry.22642542">
+        
+            <div class="iCol">
+                <label for="gfrm_eml">E-mail: </label>
+				<div><input id="gfrm_eml" type="email" name="emailAddress" placeholder="Your E-mail" required></div>
+            </div>
+            <div class="iCol"
+				
+                <label for="gfrm_sbjt">Letter subject: </label>
+                  <div> <select id="gfrm_sbjt" required name="entry.22642542">
                        <option value="Главный вариант">Web-dev</option>
                       <option value="Второстепенный">Programming</option>
                       <option value="Отстранённый">Design</option>
                      <option value="Что еще?">Other</option>
                  </select>
-             </label>            
+             </div>
             </div>
-            <div class="col">           
-               <label>Message:<textarea name="entry.1283908172" placeholder="Enter text..."></textarea></label>            
+            <div class="iCol">           
+               <label for="gfrm_msg">Message: </label><div><textarea id="gfrm_msg" name="entry.1283908172" placeholder="Enter text..."></textarea></div>
             </div>
+            <div class="iCol"><input type="submit">
+    
         </div>
         
-        <input type="submit">
+
         
     </form>
 
