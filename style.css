@@ -158,12 +158,16 @@ section > div {
     display: table;
     }
 .rES {
+    width: 100%;
  display: table-row;
 }
 .cEml,
 .cSbjt {
 width: 50%;
  display: table-cell;
+}
+.cMsg {
+ display: table-row;
 }
 
 form textarea {
