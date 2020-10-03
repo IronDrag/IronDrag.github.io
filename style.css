@@ -74,6 +74,12 @@ to { transform: rotate(360deg);}
  outline: solid red;
 }
 
+.ttO_green {
+
+ outline: solid green;
+
+}
+
 .ttO_blue {
 
  outline: solid blue;
