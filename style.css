@@ -102,7 +102,11 @@ to { transform: rotate(360deg);}
 
 
 }
-
+.bClr {
+    color: blue;
+    text-decoration: underline;
+    border-color: transparent;
+    background-color: transparent;
 .to_top {
     text-align: right;
 }
