@@ -138,6 +138,10 @@ section > div {
     padding: 15px;
 } 
 
+.cMsg {
+ display: table-cell;
+}
+
 form textarea {
     /*vertical-align: top;*/
 }
