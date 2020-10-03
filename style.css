@@ -95,7 +95,10 @@ to { transform: rotate(360deg);}
     display: table-row;
     }
  
- 
+ .cEml,
+ .cSbjt {
+    display: table-row;
+    }
 
 
 }
@@ -138,7 +141,9 @@ section > div {
     padding: 15px;
 } 
 
-.cMsg {
+.cEml,
+.cSbjt{
+
  display: table-cell;
 }
 
