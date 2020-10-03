@@ -94,6 +94,10 @@ to { transform: rotate(360deg);}
 .g\@1x2 .col {
     display: table-row;
     }
+ 
+ 
+
+
 }
 
 .to_top {
@@ -135,12 +139,14 @@ section > div {
 } 
 
 form textarea {
-    vertical-align: top;
+    /*vertical-align: top;*/
 }
 
 form input,
 form select,
 form textarea {
- margin: 5px 0;
+    width: 100%;
+    resize: none;
+ /*margin: 5px 0;*/
 
 }
