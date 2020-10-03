@@ -100,7 +100,9 @@ to { transform: rotate(360deg);}
 .g\@1x2 .col {
     display: table-row;
     }
- 
+ .rES {
+    display: block;
+    }
  .cEml,
  .cSbjt {
     display: table-row;
@@ -154,6 +156,9 @@ section > div {
 .gform {
     max-width: 720px;
     }
+.rES {
+ display: table-row;
+}
 .cEml,
 .cSbjt {
 width: 50%;
