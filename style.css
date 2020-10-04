@@ -123,9 +123,9 @@ section > div.wrap {
 }
 
 .thx-form { 
-   opacity: 0;
-   display: none;   
-   transition: all 1s;
+   /* opacity: 0;
+   display: none;
+   transition: all 1s; */ 
    outline: solid black;
    padding: 1em;
    margin-bottom: 1.2em;
