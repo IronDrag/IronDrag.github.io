@@ -119,13 +119,18 @@ section .wrap {
 #mPortfolio article {
     display: table;
     width: 33.333%;
+    color: #fff;
 }
 #mPortfolio article span {
+    height: 300px;
     display: table-cell;
     vertical-align: middle;
-    text-align: center;
+    text-align: center;    
 }
-
+#mPortfolio article .boundy {
+    height: 0;
+    padding: 100%;
+}
 
 
 .gform {
