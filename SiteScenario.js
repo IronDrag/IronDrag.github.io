@@ -6,7 +6,7 @@ var app = new Vue({
 	gfThx: false,
     	message: 'Hello user ;)'
   }
-})
+});
 
 document.addEventListener("DOMContentLoaded",function(){
 	let ovrlScrn = document.querySelector(".overlay-screen");
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 document.querySelector(".gform").addEventListener("submit",function(){	
 	app.gfThx = true;
-}});
+});
 
 document.querySelector("#hidden_iframe").addEventListener("load",function(){if(app.gfThx) {
     /*window.location='/';*/ 
