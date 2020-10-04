@@ -1,4 +1,6 @@
 
+@import "tost.css"
+
 * {
     box-sizing: border-box;
 }
@@ -68,33 +70,6 @@ outline: solid #ccc;
 from { transform: rotate(0deg); }
 to { transform: rotate(360deg);}
 }
-
-
-.ttO_red {
- outline: solid red;
-}
-
-.ttO_green {
-
- outline: solid green;
-
-}
-
-.ttO_blue {
-
- outline: solid blue;
-
-}
-
-.ttO_black {
- outline: solid black;
-}
-
-
-.ttO_white {
- outline: solid white;
-}
-
 
 @media (max-width:720px) {
 .g\@1x2 .col {
