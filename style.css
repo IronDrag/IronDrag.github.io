@@ -111,24 +111,46 @@ section .wrap {
     text-decoration: none;    
 }
 
-#mPortfolio {
-    display: flex;
-    flex-wrap: wrap;
+
+.Portfolio_ctrl {
+    width: 33.333%;        
+    padding: 0;
+    margin: 15px auto;
+    display: table;
+    list-style: none;
+    text-align: center;    
+    user-select: none;
+}
+.Portfolio_ctrl li { 
+    width: 33.333%;   
+    display: table-cell;
+    padding: 0 15px;
+}
+.Portfolio_ctrl li:hover {
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-#mPortfolio article {
+
+.works-list {
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+#Portfolio-main article {
     display: table;
     width: 33.333%;
     color: #fff;
 }
-#mPortfolio article span {
+#Portfolio-main article span {
     height: 300px;
     display: table-cell;
     vertical-align: middle;
     text-align: center; 
     font-size: 2em;
 }
-#mPortfolio article .boundy {
+#Portfolio-main article .boundy {
     height: 0;
     padding: 100%;
 }
@@ -176,5 +198,9 @@ form textarea {
     }
     .fEml, .fSbjt {
         width: 100%
+    }
+
+    .Portfolio_ctrl {
+        width: 100%;
     }
 }
