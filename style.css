@@ -125,7 +125,8 @@ section .wrap {
     height: 300px;
     display: table-cell;
     vertical-align: middle;
-    text-align: center;    
+    text-align: center; 
+    font-size: 2em;
 }
 #mPortfolio article .boundy {
     height: 0;
