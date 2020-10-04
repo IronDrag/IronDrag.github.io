@@ -85,27 +85,30 @@ div.img {
     background-color: transparent;
     }
 
+main {
+    position: relative;
+}
+
+section .wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 15px;
+}
+
 .to_top {
     text-align: right;
 }
 .to_top a {
     display: inline-block;
     padding: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     background-color: #000;
     color: #fff;
     text-decoration: none;    
-}
-
-main {
-    position: relative;
-}
-
-section > div,
-section > div.wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    padding: 15px;
 }
 
 .gform {
