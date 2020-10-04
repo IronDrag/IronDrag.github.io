@@ -111,6 +111,23 @@ section .wrap {
     text-decoration: none;    
 }
 
+#mPortfolio {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#mPortfolio article {
+    display: table;
+    width: 33.333%;
+}
+#mPortfolio article span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+
 .gform {
     max-width: 720px;
     display: flex;
