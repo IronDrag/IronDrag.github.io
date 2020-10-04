@@ -4,10 +4,12 @@
 * {
     box-sizing: border-box;
 }
+
 html,body {
     position: relative;
     font-family: Arial;
 }
+
 header,footer {
     padding: 15px;
     text-align: center;
@@ -15,6 +17,7 @@ header,footer {
     background-color: #24292e;
     color: #fff;
 }
+
 header *,
 footer * {
     color: #fff;
@@ -27,6 +30,7 @@ header h1 a {
 p {
     padding-right: 30px;
 }
+
 .g\@1x2 {
     display: table;
 }
@@ -34,63 +38,54 @@ p {
     width: 50%;
     display: table-cell;
     vertical-align: top;
+}
 
+._on {
+    display: block;
+    opacity: 1;
 }
 
 div.img {
-height: 10em;
-width: 100%;
-display: inline-block;
-margin: 1em 0;
-background-color: #ddd;
-outline: solid #ccc;
+    height: 10em;
+    width: 100%;
+    display: inline-block;
+    margin: 1em 0;
+    background-color: #ddd;
+    outline: solid #ccc;
 }
 
 .overlay-screen {
- width: 100%;
- height: 100%;
- position: fixed;
- display: flex;
- justify-content: center;
- align-items: center;
- background-color: #fff;
- opacity: 1;
- transition: opacity .9s;
- z-index: 999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    opacity: 1;
+    transition: opacity .9s;
+    z-index: 999;
 }
 
 .Loading-ico {
- width: 2em;
- height: 2em;
- background-color: #000;
- animation: 1s linear 0s infinite normal Loading;
+    width: 2em;
+    height: 2em;
+    background-color: #000;
+    animation: 1s linear 0s infinite normal Loading;
 }
 
 @keyframes Loading {
-from { transform: rotate(0deg); }
-to { transform: rotate(360deg);}
+    from { transform: rotate(0deg);     }
+    to   { transform: rotate(360deg);   }
 }
 
-@media (max-width:720px) {
-.g\@1x2 .col {
-    display: table-row;
-    }
- .rES {
-    display: block;
-    }
- .cEml,
- .cSbjt {
-    display: table-row;
-    }
-
-
-}
 .bClr {
     color: blue;
     text-decoration: underline;
     border-color: transparent;
     background-color: transparent;
     }
+
 .to_top {
     text-align: right;
 }
@@ -99,61 +94,57 @@ to { transform: rotate(360deg);}
     padding: 10px;
     background-color: #000;
     color: #fff;
-    text-decoration: none;
-    
+    text-decoration: none;    
 }
 
-.thx-form {
-   display: none;
-   opacity: 0; 
-   transition: all 1s;
-   outline: solid black;
-   padding: 15px;
-   margin-bottom: 5px;
-}
-.thx-form__on {
-    display: block;
-    opacity: 1;
-}
 main {
-position: relative;
-}
-section {
-    /*padding:0 15px 0 15px;*/
+    position: relative;
 }
 
-section > div {
+section > div,
+section > div.wrap {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 30px;
     padding: 15px;
-} 
-.gform {
-    max-width: 720px;
-    display: table;
-    }
-.rES {
-    width: 100%;
- display: table-row;
-}
-.cEml,
-.cSbjt {
-width: 50%;
- display: table-cell;
-}
-.cMsg {
- display: table-row;
 }
 
-form textarea {
-    /*vertical-align: top;*/
+.gform {
+    max-width: 720px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fEml, .fSbjt {
+    width: 50%;    
+}
+
+.fMsg, .fCtrl {
+    width: 100%;
+}
+
+.thx-form { 
+   opacity: 0;
+   display: none;   
+   transition: all 1s;
+   outline: solid black;
+   padding: 1em;
+   margin-bottom: 1.2em;
 }
 
 form input,
 form select,
 form textarea {
     width: 100%;
-    resize: none;
- /*margin: 5px 0;*/
+    min-height: 2em;
+    resize: none;    
+}
 
+@media (max-width:720px) {
+    .g\@1x2 .col {
+        display: table-row;
+    }
+    .fEml, .fSbjt {
+        width: 100%
+    }
 }
