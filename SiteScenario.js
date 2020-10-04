@@ -11,6 +11,6 @@ document.addEventListener("DOMContentLoaded",function(){
 document.querySelector("#hidden_iframe").addEventListener("load",function(){if(submitted) {
     /*window.location='/';*/
     let thxForm = document.querySelector('.thx-form'); 
-    thxForm.classList.toggle('thx-form__on'); 
+    thxForm.classList.toggle('_on'); 
     setTimeout(function(){ thxForm.classList.toggle('thx-form__on');},10000); 
 }});
