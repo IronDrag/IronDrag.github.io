@@ -14,3 +14,11 @@ document.querySelector("#hidden_iframe").addEventListener("load",function(){if(s
     thxForm.classList.toggle('_on'); 
     setTimeout(function(){ thxForm.classList.toggle('thx-form__on');},10000); 
 }});
+
+
+var app = new Vue({
+  el: '#mySite',
+  data: {
+    message: 'Hello user ;)'
+  }
+})
