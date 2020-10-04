@@ -100,7 +100,16 @@
 				But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, 
 				or one who avoids a pain that produces no resultant pleasure?</p>
 		</div>
-	</section>	
+	</section>
+
+	<section>
+		<div class="wrap">
+			<h2>Portfolio</h2>
+			<div id="mPortfolio">
+				<article v-for="item in portfolio" v-bind:style="{ background-color: [ item.color , '#000'] }">{{ item.title }}</article>
+			</div>
+		</div>
+	</section>
 
 	<section id="Contact">
 		<div class="wrap">

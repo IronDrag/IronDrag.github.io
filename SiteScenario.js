@@ -4,7 +4,12 @@ var app = new Vue({
   el: '#mySite',
   data: {
 	gfThx: false,
-    	message: 'Hello user ;)'
+	message: 'Hello user ;)',
+	portfolio: [
+		{ title: "Logo", color: "#597372" },
+		{ title: "3D model", color: "#D39F8A" },
+		{ title: "Site", color: "#DAD1C2" }
+	]
   }
 });
 
