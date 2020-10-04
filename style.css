@@ -114,6 +114,11 @@ section > div.wrap {
     flex-wrap: wrap;
 }
 
+.fEml, .fSbjt, .fMsg, .fCtrl {
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
 .fEml, .fSbjt {
     width: 50%;    
 }
