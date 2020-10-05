@@ -60,7 +60,7 @@
 <main id="mySite">
 	<section id="About">
 		<div class="wrap">
-			<h2>About</h2>        
+			<h2 v-on:click="message = 'tost'">About</h2>        
 			<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
 			<p><b>{{ message }}</b></p>
 			<div class="g@1x2">
@@ -105,9 +105,9 @@
 	<section id="Portfolio-main">
 		<div class="wrap">
 			<h2>Portfolio</h2>
-			<ul class="Portfolio_ctrl"><li>Logos</li><li>3D models</li><li>Sites</li></ul>
-			<div class="works-list">				
-				<article v-for="item in portfolio" v-bind:style="{ backgroundColor: item.color }"><span>{{ item.title }}</span></article>
+			<div><ul class="Portfolio_ctrl"><li v-on:click="clearAll()">All</li><li v-on:click="filterHandler('Logos')" v-on:click.shift="filterHandler('Logos',true)">Logos</li><li v-on:click="filterHandler('Models')">3D models</li><li v-on:click="filterHandler('Sites')">Sites</li></ul></div>		
+			<div class="works-list">							
+				<article v-for="item in portfolio" v-if="choise[item.tag] || choise.All" v-bind:style="{ backgroundColor: item.color }"><span>{{ item.title }}</span></article>
 			</div>
 		</div>
 	</section>
@@ -146,7 +146,7 @@
 	</section>
 
 	<section class="to_top">
-		<div class="wrap"><a href="#top">To top</a></div>
+		<div class="wrap" style="padding: 0; margin: 0;"><a href="#top">To top</a></div>
 	</section>
 </main>
 <footer><a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a> | 2020</footer>

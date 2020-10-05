@@ -113,18 +113,19 @@ section .wrap {
 
 
 .Portfolio_ctrl {
-    width: 33.333%;        
+    /*width: 33.333%; */
+    width: 40%;       
     padding: 0;
-    margin: 15px auto;
+    margin: 0 auto;
     display: table;
     list-style: none;
     text-align: center;    
     user-select: none;
 }
 .Portfolio_ctrl li { 
-    width: 33.333%;   
+    width: 25%;   
     display: table-cell;
-    padding: 0 15px;
+    padding: 15px;
 }
 .Portfolio_ctrl li:hover {
     font-weight: bold;
