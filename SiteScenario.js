@@ -1,58 +1,74 @@
 console.log("All systems successful run!");
 
+Vue.component("fltr-ch-item",{
+	inject: ["filterHandler"],	
+	props: ['fTag','filtchoise'],		
+	template: "<li v-bind:class=\"{ f__active: filtchoise }\" v-on:click=\"filterHandler(fTag)\">{{ fTag }}</li>"	
+});
+
 var app = new Vue({
   el: '#mySite',
-  data: {
+  data: {	
 	gfThx: false,
-	message: 'Hello user ;)',
-	choise: { All: true, Design: false, Model: false, Web: false },
-	portfolio: [
-		{ id:1, tag: "Design", title: "Logo", color: "#597372" },
-		{ id:2, tag: "Model", title: "Train", color: "#D39F8A"},
-		{ id:3, tag: "Web", title: "Site", color: "#DAD1C2" },
-		{ id:4, tag: "Web", title: "Web-dev", color: "#193441" },
-		{ id:5, tag: "Design", title: "Design", color: "#FF7F66" },
-		{ id:6, tag: "Model", title: "Car", color: "#91AA9D" }
-	]
-  },
-  computed: {
-	  
+	message: 'Hello user ;)',	
+	portfolio:{
+		choise: { 
+			All: true, 
+			Design: false, 
+			Model: false, 
+			Web: false 
+		},
+		items:[
+			{ id:1, tag: "Design", title: "Logo", color: "#597372" },
+			{ id:2, tag: "Model", title: "Train", color: "#D39F8A"},
+			{ id:3, tag: "Web", title: "Site", color: "#DAD1C2" },
+			{ id:4, tag: "Web", title: "Web-dev", color: "#193441" },
+			{ id:5, tag: "Design", title: "Design", color: "#FF7F66" },
+			{ id:6, tag: "Model", title: "Car", color: "#91AA9D" }
+		]
+	} 
   },
   methods: {
 	filterCount: function(tost){			
-		for (const item in this.choise) {						
-		  if(this.choise[item] && item != tost) return true;		  
+		for (const item in this.portfolio.choise) {						
+		  if(this.portfolio.choise[item] && item != tost) return true;		  
 		}		
 		return false;
 	},	
-	filterHandler: function(ev,item,modK){
+	filterHandler: function(item,modK){
 			if(item == "All") {
-				this.choise = { All:true, Design: false, Model: false, Web: false };								
+				this.portfolio.choise = { All:true, Design: false, Model: false, Web: false };								
 			}
 
-			this.choise.All = false;
-			//console.dir(ev.path[0].classList.add("f__active"));
+			this.portfolio.choise.All = false;
 			
-			if(this.choise.All == false && this.choise[item] == true && this.filterCount(item)){
-				ev.path[0].classList.remove("f__active");				
-				this.choise[item] = false;
+			
+			if(this.portfolio.choise.All == false && this.portfolio.choise[item] == true && this.filterCount(item)){
+								
+				this.portfolio.choise[item] = false;
 			} else {
-				ev.path[0].classList.add("f__active");
-				this.choise[item] = true;
+				
+				this.portfolio.choise[item] = true;
 			}			
 
 			if(modK) {
 				console.log(item,"Shift");
 			}
 		}
+	},
+	provide: function(){
+		return {
+			filterHandler: this.filterHandler
+		};
 	}
 });
 
+
+
 document.addEventListener("DOMContentLoaded",function(){
 	let ovrlScrn = document.querySelector(".overlay-screen");
- 
 	setTimeout(function(){ ovrlScrn.style.opacity = 0; },2000); 
- 	setTimeout(function(){ ovrlScrn.style.display = "none"; },3000); 
+ 	setTimeout(function(){ ovrlScrn.style.display = "none"; },3000);   	 
 });
 
 document.querySelector(".gform").addEventListener("submit",function(){	

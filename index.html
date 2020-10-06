@@ -105,10 +105,17 @@
 	<section id="Portfolio-main">
 		<div class="wrap">
 			<h2>Portfolio</h2>
-			<div><ul class="Portfolio_ctrl"><li v-on:click="filterHandler($event,'All')">All</li><li v-on:click="filterHandler($event,'Design')" v-on:click.shift="filterHandler($event,'Design',true)">Design</li><li v-on:click="filterHandler($event,'Model')">Modeling</li><li v-on:click="filterHandler($event,'Web')">Web</li></ul></div>		
-			<div class="works-list">									
-					<article v-for="item in portfolio" v-if="choise[item.tag] || choise.All" v-bind:style="{ backgroundColor: item.color }"><span>{{ item.title }}</span></article>				
+			<div>
+				<ul class="Portfolio_ctrl">
+					<fltr-ch-item f-tag="All" v-bind:filtchoise="portfolio.choise.All"></fltr-ch-item>
+					<fltr-ch-item f-tag="Design" v-bind:filtchoise="portfolio.choise.Design"></fltr-ch-item>
+					<fltr-ch-item f-tag="Model"  v-bind:filtchoise="portfolio.choise.Model"></fltr-ch-item>
+					<fltr-ch-item f-tag="Web"  v-bind:filtchoise="portfolio.choise.Web"></fltr-ch-item>					
+				</ul>
 			</div>
+			<transition-group name="portfolio-items" class="works-list" tag="div">													
+					<article v-for="item in portfolio.items" v-if="portfolio.choise[item.tag] || portfolio.choise.All" v-bind:key="item.id" v-bind:style="{ backgroundColor: item.color }"><span>{{ item.title }}</span></article>
+			</transition-group>
 		</div>
 	</section>
 

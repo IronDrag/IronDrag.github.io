@@ -112,8 +112,7 @@ section .wrap {
 }
 
 
-.Portfolio_ctrl {
-    /*width: 33.333%; */
+.Portfolio_ctrl {      
     width: 40%;       
     padding: 0;
     margin: 0 auto;
@@ -125,12 +124,15 @@ section .wrap {
 .Portfolio_ctrl li { 
     width: 25%;   
     display: table-cell;
-    padding: 15px;
+    padding: 15px 0;
     cursor: pointer;
 }
-.Portfolio_ctrl li:hover,
-.f__active {
+.Portfolio_ctrl li:hover {
     font-weight: bold;    
+    
+}
+.f__active {
+    font-weight: bold; 
     text-decoration: underline;
 }
 
@@ -158,6 +160,9 @@ section .wrap {
     padding: 100%;
 }
 
+.portfolio-items-move {
+    transition: transform 1s;
+  }
 
 .gform {
     max-width: 720px;
