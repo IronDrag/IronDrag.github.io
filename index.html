@@ -105,9 +105,9 @@
 	<section id="Portfolio-main">
 		<div class="wrap">
 			<h2>Portfolio</h2>
-			<div><ul class="Portfolio_ctrl"><li v-on:click="clearAll()">All</li><li v-on:click="filterHandler('Logos')" v-on:click.shift="filterHandler('Logos',true)">Logos</li><li v-on:click="filterHandler('Models')">3D models</li><li v-on:click="filterHandler('Sites')">Sites</li></ul></div>		
-			<div class="works-list">							
-				<article v-for="item in portfolio" v-if="choise[item.tag] || choise.All" v-bind:style="{ backgroundColor: item.color }"><span>{{ item.title }}</span></article>
+			<div><ul class="Portfolio_ctrl"><li v-on:click="filterHandler($event,'All')">All</li><li v-on:click="filterHandler($event,'Design')" v-on:click.shift="filterHandler($event,'Design',true)">Design</li><li v-on:click="filterHandler($event,'Model')">Modeling</li><li v-on:click="filterHandler($event,'Web')">Web</li></ul></div>		
+			<div class="works-list">									
+					<article v-for="item in portfolio" v-if="choise[item.tag] || choise.All" v-bind:style="{ backgroundColor: item.color }"><span>{{ item.title }}</span></article>				
 			</div>
 		</div>
 	</section>

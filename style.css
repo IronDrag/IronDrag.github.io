@@ -126,10 +126,11 @@ section .wrap {
     width: 25%;   
     display: table-cell;
     padding: 15px;
-}
-.Portfolio_ctrl li:hover {
-    font-weight: bold;
     cursor: pointer;
+}
+.Portfolio_ctrl li:hover,
+.f__active {
+    font-weight: bold;    
     text-decoration: underline;
 }
 

@@ -5,60 +5,48 @@ var app = new Vue({
   data: {
 	gfThx: false,
 	message: 'Hello user ;)',
-	choise: { All: true, Logos: false, Models: false, Sites: false },
+	choise: { All: true, Design: false, Model: false, Web: false },
 	portfolio: [
-		{ id:1, tag: "Logos", title: "Logo", color: "#597372" },
-		{ id:2, tag: "Models", title: "3D model", color: "#D39F8A" },
-		{ id:3, tag: "Sites", title: "Site", color: "#DAD1C2" }
+		{ id:1, tag: "Design", title: "Logo", color: "#597372" },
+		{ id:2, tag: "Model", title: "Train", color: "#D39F8A"},
+		{ id:3, tag: "Web", title: "Site", color: "#DAD1C2" },
+		{ id:4, tag: "Web", title: "Web-dev", color: "#193441" },
+		{ id:5, tag: "Design", title: "Design", color: "#FF7F66" },
+		{ id:6, tag: "Model", title: "Car", color: "#91AA9D" }
 	]
   },
+  computed: {
+	  
+  },
   methods: {
-	clearAll: function(list){
+	filterCount: function(tost){			
+		for (const item in this.choise) {						
+		  if(this.choise[item] && item != tost) return true;		  
+		}		
+		return false;
+	},	
+	filterHandler: function(ev,item,modK){
+			if(item == "All") {
+				this.choise = { All:true, Design: false, Model: false, Web: false };								
+			}
 
-			this.choise = { All:true, Logos: false, Models: false, Sites: false };		
-			
-		},
-	filterHandler: function(item,state){
 			this.choise.All = false;
-			if(this.choise.All == false && this.choise[item] == true){
+			//console.dir(ev.path[0].classList.add("f__active"));
+			
+			if(this.choise.All == false && this.choise[item] == true && this.filterCount(item)){
+				ev.path[0].classList.remove("f__active");				
 				this.choise[item] = false;
 			} else {
+				ev.path[0].classList.add("f__active");
 				this.choise[item] = true;
 			}			
 
-			if(state) {
+			if(modK) {
 				console.log(item,"Shift");
 			}
 		}
 	}
 });
-/*
-new Vue({
-	el: '#Portfolio-main',
-	data: function () {
-	  return {
-		choise: { Logo: true, Models: true, Sites: true },
-		portfolio: [
-			{ tag: "Logo", title: "Logo", color: "#597372" },
-			{ tag: "Models", title: "3D model", color: "#D39F8A" },
-			{ tag: "Sites", title: "Site", color: "#DAD1C2" }
-		]
-	  }
-	},
-	computed: {
-		filteredChoise: function(){
-			this.choise
-		}
-	},
-	methods: {
-		clearAll: function(){
-			alert("tost");
-			this.choise = { Logo: true, Models: true, Sites: true };
-		}
-	}
-});*/
-
-
 
 document.addEventListener("DOMContentLoaded",function(){
 	let ovrlScrn = document.querySelector(".overlay-screen");
