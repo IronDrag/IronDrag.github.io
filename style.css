@@ -141,12 +141,13 @@ section .wrap {
 }
 
 #Portfolio-main article {
-    display: table;
+    height: 300px;
     width: 33.333%;
+    display: table;    
     color: #fff;
 }
 #Portfolio-main article span {
-    height: 300px;
+    height: 100%;
     display: table-cell;
     vertical-align: middle;
     text-align: center; 
@@ -205,4 +206,9 @@ form textarea {
     .Portfolio_ctrl {
         width: 100%;
     }
+
+    #Portfolio-main article {        
+        width: 50%;
+        height: 150px;        
+    }    
 }
