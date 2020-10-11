@@ -1,14 +1,7 @@
 console.log("All systems successful run!");
 
-Vue.component("fltr-ch-item",{
-	inject: ["filterHandler"],	
-	props: ['fTag','filtchoise'],		
-	template: "<li v-bind:class=\"{ f__active: filtchoise }\" v-on:click=\"filterHandler(fTag)\">{{ fTag }}</li>"	
-});
-
-var app = new Vue({
-  el: '#mySite',
-  data: {	
+var myApp = {
+	loading: true,	
 	gfThx: false,
 	message: 'Hello user ;)',	
 	portfolio:{
@@ -27,7 +20,17 @@ var app = new Vue({
 			{ id:6, tag: "Model", title: "Car", color: "#91AA9D" }
 		]
 	} 
-  },
+  };
+
+Vue.component("fltr-ch-item",{
+	inject: ["filterHandler"],	
+	props: ['fTag','filtchoise'],		
+	template: "<li v-bind:class=\"{ f__active: filtchoise }\" v-on:click=\"filterHandler(fTag)\">{{ fTag }}</li>"	
+});
+
+var app = new Vue({
+  el: '#mySite',
+  data: myApp,
   methods: {
 	filterCount: function(tost){			
 		for (const item in this.portfolio.choise) {						
@@ -39,15 +42,11 @@ var app = new Vue({
 			if(item == "All") {
 				this.portfolio.choise = { All:true, Design: false, Model: false, Web: false };								
 			}
-
-			this.portfolio.choise.All = false;
+			this.portfolio.choise.All = false;			
 			
-			
-			if(this.portfolio.choise.All == false && this.portfolio.choise[item] == true && this.filterCount(item)){
-								
+			if(this.portfolio.choise.All == false && this.portfolio.choise[item] == true && this.filterCount(item)){								
 				this.portfolio.choise[item] = false;
-			} else {
-				
+			} else {				
 				this.portfolio.choise[item] = true;
 			}			
 
@@ -63,12 +62,15 @@ var app = new Vue({
 	}
 });
 
-
+document.body.style.overflow = "hidden";
 
 document.addEventListener("DOMContentLoaded",function(){
 	let ovrlScrn = document.querySelector(".overlay-screen");
 	setTimeout(function(){ ovrlScrn.style.opacity = 0; },2000); 
- 	setTimeout(function(){ ovrlScrn.style.display = "none"; },3000);   	 
+	 setTimeout(function(){ 
+		 ovrlScrn.style.display = "none"; 
+		 document.body.style.overflowY = "auto";
+	},3000);   	 
 });
 
 document.querySelector(".gform").addEventListener("submit",function(){	

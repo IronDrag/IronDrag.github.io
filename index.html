@@ -21,15 +21,10 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109139286-3"></script>
 	<script>
-
 	  window.dataLayer = window.dataLayer || [];
-
 	  function gtag(){dataLayer.push(arguments);}
-
 	  gtag('js', new Date());
-
 	  gtag('config', 'UA-109139286-3');
-
 	</script>
     
 	<link rel="stylesheet" href="style.css">
@@ -48,10 +43,15 @@
     <div class="Loading-ico"></div>
 </div>
 <header>
-    <h1><a href="/">iDragon.space</a></h1>
-    <hr>
-    <a href="#About">About</a> | 
-    <a href="#Contact">Contact</a>
+	<div class="wrap">
+		<h1><a href="/">iDragon.space</a></h1>
+		<hr>
+		<nav>
+			<a href="#About">About</a> |
+			<a href="#Portfolio-main">Portfolio</a> | 
+			<a href="#Contact">Contact</a>
+		</nav>
+	</div>
 </header>
 <main id="mySite">
 	<section id="About">
@@ -115,7 +115,7 @@
 		</div>
 	</section>
 
-	<section id="Contact">
+	<section id="Contact" class="">
 		<div class="wrap">
 			<h2>Contact</h2>
 			<div class="thx-form" v-if="gfThx">Thanks for filling out the contact form</div>
@@ -146,13 +146,19 @@
 
 			<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" onload=""></iframe>
 		</div>
+		<div class="contact__map">
+		</div>
 	</section>
 
 	<section class="to_top">
 		<div class="wrap" style="padding: 0; margin: 0;"><a href="#top">To top</a></div>
 	</section>
 </main>
-<footer><a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a> | 2020</footer>
+<footer>
+	<div class="wrap">
+		<a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a> | 2020
+	</div>
+</footer>
 <script src="SiteScenario.js"></script>
 </body>
 </html>

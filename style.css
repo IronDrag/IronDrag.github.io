@@ -7,10 +7,10 @@
 html,body {
     position: relative;
     font-family: Arial;
+    scroll-behavior: smooth;
 }
 
-header,footer {
-    padding: 15px;
+header,footer {    
     text-align: center;
     overflow:hidden;
     background-color: #24292e;
@@ -22,8 +22,24 @@ footer * {
     color: #fff;
 }
 
-header h1 a {
+header .wrap {
+    display: flex;
+    align-items: center;
+}
+header hr {
+    display: none;
+}
+header h1 {
+    flex-grow: 1;
+    text-align: left;
+}
+
+header a {
  text-decoration: none;
+}
+
+header nav a {
+    padding: 0 15px;
 }
 
 p {
@@ -87,14 +103,18 @@ div.img {
 
 main {
     position: relative;
+    padding-top: 138px;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;    
+    position: relative;
+    padding: 15px;
 }
 
 section .wrap {
-    max-width: 1200px;
-    margin: 0 auto;
     margin-bottom: 30px;
-    position: relative;
-    padding: 15px;
 }
 
 .to_top {
@@ -200,10 +220,29 @@ form textarea {
     resize: none;    
 }
 
+.contact__map {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    background: url('map.png') center center no-repeat;
+    background-size: cover;
+}
+.contact__map img {    
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
 @media (max-width:720px) {
     .g\@1x2 .col {
         display: table-row;
     }
+
+    header .wrap,
+    header hr {
+        display: block;
+    }
+
     .fEml, .fSbjt {
         width: 100%
     }
@@ -215,5 +254,9 @@ form textarea {
     #Portfolio-main article {        
         width: 50%;
         height: 150px;        
-    }    
+    } 
+    
+    .contact__map {
+        height: 30vh;
+    }
 }
