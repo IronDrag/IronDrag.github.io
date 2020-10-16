@@ -216,7 +216,8 @@ form input,
 form select,
 form textarea {
     width: 100%;
-    min-height: 2em;
+    min-height: 3em;
+    padding: 10px;
     resize: none;    
 }
 
