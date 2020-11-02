@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded",function(){
 });
 
 document.querySelector(".gform").addEventListener("submit",function(){
+	this.reset();
 	gtag('event', 'contact');		
 	app.gfThx = true;
 });
