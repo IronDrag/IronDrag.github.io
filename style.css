@@ -103,7 +103,7 @@ div.img {
 
 main {
     position: relative;
-    padding-top: 138px;
+    padding-top: 50px;
 }
 
 .wrap {
@@ -202,7 +202,11 @@ section .wrap {
 .fMsg, .fCtrl {
     width: 100%;
 }
-
+.fCtrl a {
+    float: right;
+    font-style: italic;
+    line-height: 40px;
+}
 .thx-form { 
    /* opacity: 0;
    display: none;
@@ -212,12 +216,18 @@ section .wrap {
    margin-bottom: 1.2em;
 }
 
+button {
+    padding: 10px;
+    min-height: 3em;
+    cursor: pointer;
+}
 form input,
 form select,
 form textarea {
     width: 100%;
     min-height: 3em;
     padding: 10px;
+    font-family: inherit;
     resize: none;    
 }
 
@@ -225,8 +235,9 @@ form textarea {
     height: 400px;
     overflow: hidden;
     position: relative;
-    background: url('map.png') center center no-repeat;
+    background: url('map.jpg') center center no-repeat;
     background-size: cover;
+    cursor: zoom-in;
 }
 .contact__map img {    
     display: block;

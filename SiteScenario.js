@@ -73,7 +73,8 @@ document.addEventListener("DOMContentLoaded",function(){
 	},3000);   	 
 });
 
-document.querySelector(".gform").addEventListener("submit",function(){	
+document.querySelector(".gform").addEventListener("submit",function(){
+	gtag('event', 'contact');		
 	app.gfThx = true;
 });
 
