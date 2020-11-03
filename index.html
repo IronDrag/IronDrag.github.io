@@ -57,7 +57,7 @@
 	<section id="About">
 		<div class="wrap">
 			<img src="banner.png" alt="Banner" class="img">
-			<h2 v-on:click="message = 'tost'">About</h2>        
+			<h2 v-on:click="message = 'Hello user ;)'">About</h2>        
 			<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
 			<p><b>{{ message }}</b></p>
 			<div class="g@1x2">
@@ -114,8 +114,8 @@
 					<fltr-ch-item f-tag="Web"  v-bind:filtchoise="portfolio.choise.Web"></fltr-ch-item>					
 				</ul>
 			</div>
-			<transition-group name="portfolio-items" class="Galery__list" tag="div">													
-					<article class="Galery__item" v-for="item in portfolio.items" v-if="portfolio.choise[item.tag] || portfolio.choise.All" v-bind:key="item.id" v-bind:style="{ backgroundColor: item.color }">
+			<transition-group name="portfolio-items" class="Galery__list" tag="div" :duration="1000">													
+					<article class="Galery__item" v-for="item in portfolio.items" v-show="portfolio.choise[item.tag] || portfolio.choise.All" v-bind:key="item.id" v-bind:style="{ backgroundColor: item.color }">
 						<div>
 							<h3>{{ item.title }}</h3>
 							<ul class="Tag-list">

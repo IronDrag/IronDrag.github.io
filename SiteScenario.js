@@ -3,9 +3,9 @@ console.log("All systems successful run!");
 var myApp = {
 	loading: true,	
 	gfThx: false,
-	message: 'Hello user ;)',	
+	message: 'Tost text',	
 	portfolio:{
-		choise: { 
+		choise: {
 			All: true, 
 			Design: false, 
 			Model: false, 
@@ -17,7 +17,7 @@ var myApp = {
 			{ id:3, tag: "Web", title: "Site", color: "#DAD1C2", labels: [ "Web", "Codding", "Site" ] },
 			{ id:4, tag: "Web", title: "Web-dev", color: "#193441", labels: [ "Web", "CRM", "App" ] },
 			{ id:5, tag: "Design", title: "Design", color: "#FF7F66", labels: [ "Design", "Web", "Site" ] },
-			{ id:6, tag: "Model", title: "Car", color: "#91AA9D", labels: [ "Model", "Muscle", "Car" ] }
+			{ id:6, tag: "Model", title: "Car", color: "#91AA9D", labels: [ "Model", "Muscle", "Car" ] }			
 		]
 	} 
   };
@@ -25,7 +25,7 @@ var myApp = {
 Vue.component("fltr-ch-item",{
 	inject: ["filterHandler"],	
 	props: ['fTag','filtchoise'],		
-	template: "<li v-bind:class=\"{ _active: filtchoise }\" v-on:click=\"filterHandler(fTag)\">{{ fTag }}</li>"	
+	template: "<li v-bind:class=\"{ _active: filtchoise }\" v-on:click.exact=\"filterHandler(fTag)\" v-on:click.shift.exact=\"filterHandler(fTag,true)\" >{{ fTag }}</li>"	
 });
 
 var app = new Vue({
@@ -40,18 +40,35 @@ var app = new Vue({
 	},	
 	filterHandler: function(item,modK){
 			if(item == "All") {
-				this.portfolio.choise = { All:true, Design: false, Model: false, Web: false };								
+				this.portfolio.choise = { All:true, Design: false, Model: false, Web: false };
+				return true;												
 			}
-			this.portfolio.choise.All = false;			
-			
-			if(this.portfolio.choise.All == false && this.portfolio.choise[item] == true && this.filterCount(item)){								
-				this.portfolio.choise[item] = false;
-			} else {				
-				this.portfolio.choise[item] = true;
-			}			
 
-			if(modK) {
-				console.log(item,"Shift");
+			this.portfolio.choise.All = false;
+
+			if(!modK) {	
+				/*for(const key in this.portfolio.choise){
+					if(key == item) {
+						this.portfolio.choise[key] = true;	
+					} else {
+						this.portfolio.choise[key] = false;
+					}	
+				}*/
+				let tost = { All:false, Design: false, Model: false, Web: false };
+				tost[item] = true;
+				this.portfolio.choise = tost;		
+				return true;
+			} else {
+				if(this.portfolio.choise.All == false && this.portfolio.choise[item] == true && this.filterCount(item)){								
+					this.portfolio.choise[item] = false;
+					return true;
+						
+				} else {
+					
+					
+					this.portfolio.choise[item] = true;
+					return true;
+				}	
 			}
 		}
 	},
