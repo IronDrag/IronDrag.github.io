@@ -12,12 +12,12 @@ var myApp = {
 			Web: false 
 		},
 		items:[
-			{ id:1, tag: "Design", title: "Logo", color: "#597372" },
-			{ id:2, tag: "Model", title: "Train", color: "#D39F8A"},
-			{ id:3, tag: "Web", title: "Site", color: "#DAD1C2" },
-			{ id:4, tag: "Web", title: "Web-dev", color: "#193441" },
-			{ id:5, tag: "Design", title: "Design", color: "#FF7F66" },
-			{ id:6, tag: "Model", title: "Car", color: "#91AA9D" }
+			{ id:1, tag: "Design", title: "Logo", color: "#597372", labels: [ "Design", "Vector", "Logo" ] },
+			{ id:2, tag: "Model", title: "Train", color: "#D39F8A", labels: [ "Model", "Low-poly", "Train" ] },
+			{ id:3, tag: "Web", title: "Site", color: "#DAD1C2", labels: [ "Web", "Codding", "Site" ] },
+			{ id:4, tag: "Web", title: "Web-dev", color: "#193441", labels: [ "Web", "CRM", "App" ] },
+			{ id:5, tag: "Design", title: "Design", color: "#FF7F66", labels: [ "Design", "Web", "Site" ] },
+			{ id:6, tag: "Model", title: "Car", color: "#91AA9D", labels: [ "Model", "Muscle", "Car" ] }
 		]
 	} 
   };
@@ -25,7 +25,7 @@ var myApp = {
 Vue.component("fltr-ch-item",{
 	inject: ["filterHandler"],	
 	props: ['fTag','filtchoise'],		
-	template: "<li v-bind:class=\"{ f__active: filtchoise }\" v-on:click=\"filterHandler(fTag)\">{{ fTag }}</li>"	
+	template: "<li v-bind:class=\"{ _active: filtchoise }\" v-on:click=\"filterHandler(fTag)\">{{ fTag }}</li>"	
 });
 
 var app = new Vue({

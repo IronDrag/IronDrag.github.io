@@ -16,7 +16,7 @@
 	<meta property='og:url' content="https://idragon.space" >
 	<meta property="og:type" content="website">    
     
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109139286-3"></script>
@@ -48,7 +48,7 @@
 		<hr>
 		<nav>
 			<a href="#About">About</a> |
-			<a href="#Portfolio-main">Portfolio</a> | 
+			<a href="#Portfolio">Portfolio</a> | 
 			<a href="#Contact">Contact</a>
 		</nav>
 	</div>
@@ -56,6 +56,7 @@
 <main id="mySite">
 	<section id="About">
 		<div class="wrap">
+			<img src="banner.png" alt="Banner" class="img">
 			<h2 v-on:click="message = 'tost'">About</h2>        
 			<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
 			<p><b>{{ message }}</b></p>
@@ -67,14 +68,17 @@
 				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p> 
 				<ul>
-					<li>Lorem ipsum</li>
-					<li>Ut enim ad minim veniam</li>
-					<li>Duis aute irure dolor</li>
-					<li>Excepteur sint</li>
+					<li>Vue.js / React / Redux / Backbone</li>
+					<li>jQuery</li>
+					<li>Bootstrap / UI Kit</li>
+					<li>Twig / Pug</li>
 				</ul>
-				
-			</div>
-				
+				<ul>
+					<li>Wordpress</li>
+					<li>Joomla</li>
+					<li>Opencart</li>					
+				</ul>				
+			</div>				
 			<div class="col"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -84,8 +88,7 @@
 				but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. 
 				Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
 				but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p></div>
-			</div>
-			<div class="img"></div>
+			</div>			
 			<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and 
 			I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, 
 				the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, 
@@ -97,34 +100,43 @@
 				or one who avoids a pain that produces no resultant pleasure?</p>
 		</div>
 	</section>
+	<section class="Img-fill">
 
-	<section id="Portfolio-main">
+	</section>
+	<section id="Portfolio">
 		<div class="wrap">
 			<h2>Portfolio</h2>
 			<div>
-				<ul class="Portfolio_ctrl">
+				<ul class="Galery_ctrl">
 					<fltr-ch-item f-tag="All" v-bind:filtchoise="portfolio.choise.All"></fltr-ch-item>
 					<fltr-ch-item f-tag="Design" v-bind:filtchoise="portfolio.choise.Design"></fltr-ch-item>
 					<fltr-ch-item f-tag="Model"  v-bind:filtchoise="portfolio.choise.Model"></fltr-ch-item>
 					<fltr-ch-item f-tag="Web"  v-bind:filtchoise="portfolio.choise.Web"></fltr-ch-item>					
 				</ul>
 			</div>
-			<transition-group name="portfolio-items" class="works-list" tag="div">													
-					<article v-for="item in portfolio.items" v-if="portfolio.choise[item.tag] || portfolio.choise.All" v-bind:key="item.id" v-bind:style="{ backgroundColor: item.color }"><span>{{ item.title }}</span></article>
+			<transition-group name="portfolio-items" class="Galery__list" tag="div">													
+					<article class="Galery__item" v-for="item in portfolio.items" v-if="portfolio.choise[item.tag] || portfolio.choise.All" v-bind:key="item.id" v-bind:style="{ backgroundColor: item.color }">
+						<div>
+							<h3>{{ item.title }}</h3>
+							<ul class="Tag-list">
+								<li v-for="label in item.labels" >{{ label }}</li>
+							</ul>
+						</div>
+					</article>
 			</transition-group>
 		</div>
 	</section>
 
-	<section id="Contact" class="">
+	<section id="Contact">
 		<div class="wrap">
 			<h2>Contact</h2>
-			<div class="thx-form" v-if="gfThx">Thanks for filling out the contact form</div>
-			<form class="gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe">        
-			<div class="fEml">
+			<div class="Contact-form__thx" v-if="gfThx">Thanks for filling out the contact form</div>
+			<form class="Contact-form gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe">        
+			<div class="Contact-form__email">
 				<label for="gfrm_eml">E-mail: </label>
 				<div><input id="gfrm_eml" type="email" name="emailAddress" placeholder="Your E-mail" required></div>
 			</div>
-			<div class="fSbjt">
+			<div class="Contact-form__subject">
 				<label for="gfrm_sbjt">Letter subject: </label>
 				<div>
 					<select id="gfrm_sbjt" required name="entry.22642542">
@@ -135,18 +147,18 @@
 					</select>
 				</div>
 			</div>
-			<div class="fMsg">           
+			<div class="Contact-form__message">           
 				<label for="gfrm_msg">Message: </label>
 				<div><textarea id="gfrm_msg" name="entry.1283908172" placeholder="Enter text..." rows="3"></textarea></div>
 			</div>
-			<div class="fCtrl">
-				<button type="submit">Submit</button> <button class="bClr" type="reset">Clear form</button> <a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a>    
+			<div class="Contact-form__controls">
+				<button type="submit">Submit</button> <button class="Contact-form__clear" type="reset">Clear form</button> <a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a>    
 			</div>        
 			</form>
 
 			<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" onload=""></iframe>
 		</div>
-		<div class="contact__map">
+		<div class="Contact__map">
 		</div>
 	</section>
 
