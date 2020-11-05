@@ -38,7 +38,9 @@ header h1 {
 header a {
  text-decoration: none;
 }
-
+header nav {
+    margin: 15px 0;
+}
 header nav a {
     padding: 0 15px;
 }
@@ -168,7 +170,7 @@ section .wrap {
     text-align: center; 
     font-size: 2em;
     transition: opacity .5s;
-    /*opacity: 0;*/
+    opacity: 0;
     background-color: rgba(255, 255, 255, 1);
     color: #000;
     cursor: pointer;

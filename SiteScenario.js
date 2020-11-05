@@ -61,11 +61,8 @@ var app = new Vue({
 			} else {
 				if(this.portfolio.choise.All == false && this.portfolio.choise[item] == true && this.filterCount(item)){								
 					this.portfolio.choise[item] = false;
-					return true;
-						
-				} else {
-					
-					
+					return true;						
+				} else {					
 					this.portfolio.choise[item] = true;
 					return true;
 				}	
@@ -90,8 +87,10 @@ document.addEventListener("DOMContentLoaded",function(){
 	},3000);   	 
 });
 
-document.querySelector(".gform").addEventListener("submit",function(){
-	this.reset();
+document.querySelector(".gform").addEventListener("submit",function(){	
+	setTimeout(function(){
+		console.dir(this);
+		this.reset();}.bind(this),1000);
 	gtag('event', 'contact');		
 	app.gfThx = true;
 });
