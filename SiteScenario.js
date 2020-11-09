@@ -22,10 +22,40 @@ var myApp = {
 	} 
   };
 
-Vue.component("fltr-ch-item",{
+Vue.component("gallery",{		
+	props: [],	
+	template: 	"<div>"+
+					"<slot></slot>"+
+				"</div>"
+});
+Vue.component("gallery-filter",{
 	inject: ["filterHandler"],	
 	props: ['fTag','filtchoise'],		
-	template: "<li v-bind:class=\"{ _active: filtchoise }\" v-on:click.exact=\"filterHandler(fTag)\" v-on:click.shift.exact=\"filterHandler(fTag,true)\" >{{ fTag }}</li>"	
+	template: 	"<ul class=\"Galery_ctrl\">"+
+					"<slot></slot>"+	
+				"</ul>"/* ,
+	render: function(tost){
+		console.dir(tost);
+		return tost("ul",this.$slots.default);
+	} */
+});
+Vue.component("filter-item",{
+	inject: ["filterHandler"],	
+	props: ['fTag','filtchoise'],		
+	template: 	"<li v-bind:class=\"{ _active: filtchoise }\" v-on:click.exact=\"filterHandler(fTag)\" v-on:click.shift.exact=\"filterHandler(fTag,true)\" >"+
+					"{{ fTag }}"+
+				"</li>"
+});
+Vue.component("gallery-item",{		
+	props: ['item'],
+	template: 	"<article class=\"Galery__item\" v-for=\"item in portfolio.items\" v-show=\"portfolio.choise[item.tag] || portfolio.choise.All\" v-bind:key=\"item.id\" v-bind:style=\"{ backgroundColor: item.color }\">"+
+					"<div>"+
+						"<h3>{{ item.title }}</h3>"+
+						"<ul class=\"Tag-list\">"+
+							"<li v-for=\"label in item.labels\" >{{ label }}</li>"+
+						"</ul>"+
+					"</div>"+
+				"</article>"
 });
 
 var app = new Vue({
@@ -46,14 +76,7 @@ var app = new Vue({
 
 			this.portfolio.choise.All = false;
 
-			if(!modK) {	
-				/*for(const key in this.portfolio.choise){
-					if(key == item) {
-						this.portfolio.choise[key] = true;	
-					} else {
-						this.portfolio.choise[key] = false;
-					}	
-				}*/
+			if(!modK) {				
 				let tost = { All:false, Design: false, Model: false, Web: false };
 				tost[item] = true;
 				this.portfolio.choise = tost;		

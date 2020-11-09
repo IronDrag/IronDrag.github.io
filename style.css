@@ -117,6 +117,9 @@ section .wrap {
 .to_top {
     text-align: right;
 }
+.to_top .wrap {
+    margin-bottom: 0;
+}
 .to_top a {
     display: inline-block;
     padding: 10px;
@@ -130,13 +133,15 @@ section .wrap {
 
 
 .Galery_ctrl {      
-    width: 40%; 
-    display: table;      
+    width: 40%;
+    position: relative;
+    display: table;
     padding: 0;
-    margin: 15px auto;    
+    margin: 15px auto;
     list-style: none;
-    text-align: center;    
+    text-align: center;
     user-select: none;
+    z-index: 777;
 }
 .Galery_ctrl li { 
     width: 25%;   

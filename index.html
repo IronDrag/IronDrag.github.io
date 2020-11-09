@@ -38,8 +38,8 @@
 		html,body {
 		    height: 100%;
 		    width: 100%;
-		    padding:0;
-		    margin:0;
+		    padding: 0;
+		    margin: 0;
 		}
 	</style>
 </head>
@@ -73,7 +73,7 @@
 				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p> 
 				<ul>
-					<li>Vue.js / React / Redux / Backbone</li>
+					<li>Vue / React / Redux / Backbone</li>
 					<li>jQuery</li>
 					<li>Bootstrap / UI Kit</li>
 					<li>Twig / Pug</li>
@@ -111,24 +111,25 @@
 	<section id="Portfolio">
 		<div class="wrap">
 			<h2>Portfolio</h2>
-			<div>
-				<ul class="Galery_ctrl">
-					<fltr-ch-item f-tag="All" v-bind:filtchoise="portfolio.choise.All"></fltr-ch-item>
-					<fltr-ch-item f-tag="Design" v-bind:filtchoise="portfolio.choise.Design"></fltr-ch-item>
-					<fltr-ch-item f-tag="Model"  v-bind:filtchoise="portfolio.choise.Model"></fltr-ch-item>
-					<fltr-ch-item f-tag="Web"  v-bind:filtchoise="portfolio.choise.Web"></fltr-ch-item>					
-				</ul>
-			</div>
-			<transition-group name="portfolio-items" class="Galery__list" tag="div" :duration="1000">													
-					<article class="Galery__item" v-for="item in portfolio.items" v-show="portfolio.choise[item.tag] || portfolio.choise.All" v-bind:key="item.id" v-bind:style="{ backgroundColor: item.color }">
-						<div>
-							<h3>{{ item.title }}</h3>
-							<ul class="Tag-list">
-								<li v-for="label in item.labels" >{{ label }}</li>
-							</ul>
-						</div>
-					</article>
-			</transition-group>
+			<gallery>
+				<gallery-filter>
+					<filter-item f-tag="All" v-bind:filtchoise="portfolio.choise.All"></filter-item>
+					<filter-item f-tag="Design" v-bind:filtchoise="portfolio.choise.Design"></filter-item>
+					<filter-item f-tag="Model"  v-bind:filtchoise="portfolio.choise.Model"></filter-item>
+					<filter-item f-tag="Web"  v-bind:filtchoise="portfolio.choise.Web"></filter-item>					
+				</gallery-filter>
+				
+				<transition-group name="portfolio-items" class="Galery__list" tag="div" :duration="1000">													
+						<article class="Galery__item" v-for="item in portfolio.items" v-show="portfolio.choise[item.tag] || portfolio.choise.All" v-bind:key="item.id" v-bind:style="{ backgroundColor: item.color }">
+							<div>
+								<h3>{{ item.title }}</h3>
+								<ul class="Tag-list">
+									<li v-for="label in item.labels" >{{ label }}</li>
+								</ul>
+							</div>
+						</article>
+				</transition-group>
+			</gallery>
 		</div>
 	</section>
 
@@ -168,7 +169,7 @@
 	</section>
 
 	<section class="to_top">
-		<div class="wrap" style="padding: 0; margin: 0;"><a href="#top">To top</a></div>
+		<div class="wrap"><a href="#top">To top</a></div>
 	</section>
 </main>
 <footer>
