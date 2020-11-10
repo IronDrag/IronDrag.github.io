@@ -225,14 +225,17 @@ section .wrap {
     flex-wrap: wrap;
 }
 
-.Contact-form__email, .Contact-form__subject, 
-.Contact-form__message, .Contact-form__controls {
+.Contact-form__name, .Contact-form__email, 
+.Contact-form__subject, .Contact-form__message, 
+.Contact-form__controls {
     padding-right: 10px;
     margin-bottom: 10px;
 }
 
-.Contact-form__email, .Contact-form__subject {
-    width: 50%;    
+.Contact-form__email, 
+.Contact-form__subject, 
+.Contact-form__name {
+    width: 33.33%;    
 }
 
 .Contact-form__message, .Contact-form__controls {
@@ -304,7 +307,9 @@ footer {
         display: block;
     }
 
-    .Contact-form__email, .Contact-form__subject {
+    .Contact-form__name, 
+    .Contact-form__email, 
+    .Contact-form__subject {
         width: 100%
     }
 
