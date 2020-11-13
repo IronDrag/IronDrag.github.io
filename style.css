@@ -49,13 +49,19 @@ p {
     padding-right: 30px;
 }
 
-.g\@1x2 {
+.g\@1x2, .g\@1x4 {
     display: table;
+}
+.g\@1x2 .col,
+.g\@1x4 .col {
+    display: table-cell;
+    vertical-align: top;
 }
 .g\@1x2 .col {
     width: 50%;
-    display: table-cell;
-    vertical-align: top;
+}
+.g\@1x4 .col {
+    width: 25%;    
 }
 
 ._on {
@@ -131,6 +137,10 @@ section .wrap {
     text-decoration: none;    
 }
 
+.about-design ul {
+    float: left;
+    margin-right: 50px;
+}
 
 .Galery_ctrl {      
     width: 40%;
@@ -297,14 +307,21 @@ footer {
     padding: 15px;
 }
 
-@media (max-width:720px) {
-    .g\@1x2 .col {
-        display: table-row;
+@media (max-width:720px) {    
+    .g\@1x2, .g\@1x4,
+    .g\@1x2 .col,
+    .g\@1x4 .col {
+        width: 100%;
+        display: block;
     }
 
     header .wrap,
     header hr {
         display: block;
+    }
+
+    .about-design ul {
+        width: 100%;
     }
 
     .Contact-form__name, 

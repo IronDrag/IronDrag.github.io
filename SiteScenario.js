@@ -4,12 +4,12 @@ var myApp = {
 	loading: true,	
 	gfThx: false,
 	message: 'Tost text',	
-	portfolio:{
+	portfolio:{		
 		choise: {
-			All: true, 
-			Design: false, 
-			Model: false, 
-			Web: false 
+			All: true,
+			Design: false,
+			Model: false,
+			Web: false
 		},
 		items:[
 			{ id:1, tag: "Design", title: "Logo", color: "#597372", labels: [ "Design", "Vector", "Logo" ] },
@@ -22,22 +22,23 @@ var myApp = {
 	} 
   };
 
-Vue.component("gallery",{		
+Vue.component("gallery",{
+	data(){
+		return {
+			
+		}
+	},
 	props: [],	
 	template: 	"<div>"+
 					"<slot></slot>"+
 				"</div>"
 });
 Vue.component("gallery-filter",{
-	inject: ["filterHandler"],	
-	props: ['fTag','filtchoise'],		
+	inject: ["filterHandler"],
+	props: ['fTag','filtchoise'],
 	template: 	"<ul class=\"Galery_ctrl\">"+
-					"<slot></slot>"+	
-				"</ul>"/* ,
-	render: function(tost){
-		console.dir(tost);
-		return tost("ul",this.$slots.default);
-	} */
+					"<slot></slot>"+
+				"</ul>"
 });
 Vue.component("filter-item",{
 	inject: ["filterHandler"],	
@@ -62,14 +63,17 @@ var app = new Vue({
   el: '#mySite',
   data: myApp,
   methods: {
-	filterCount: function(tost){			
+	hello(){
+
+	},
+	filterCount(tost){			
 		for (const item in this.portfolio.choise) {						
 		  if(this.portfolio.choise[item] && item != tost) return true;		  
 		}		
 		return false;
 	},	
-	filterHandler: function(item,modK){
-			if(item == "All") {
+	filterHandler(item,modK){
+			if(item == "All"){
 				this.portfolio.choise = { All:true, Design: false, Model: false, Web: false };
 				return true;												
 			}
@@ -90,6 +94,14 @@ var app = new Vue({
 					return true;
 				}	
 			}
+		}
+	},
+	watch: {
+		choise(tost){
+			for (const item in this.portfolio.choise) {						
+				if(this.portfolio.choise[item] && item != tost) return true;		  
+			  }		
+			  return false;
 		}
 	},
 	provide: function(){
