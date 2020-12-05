@@ -3,7 +3,12 @@ console.log("All systems successful run!");
 var myApp = {
 	loading: true,	
 	gfThx: false,
-	message: 'Tost text',	
+	message: 'Tost text',
+	tost: (function *gText(){
+		yield 'Hello user ;)';
+		yield 'Tost message';
+		return 'Good bye!';
+	})(),	
 	portfolio:{		
 		choise: {
 			All: true,
@@ -62,9 +67,10 @@ Vue.component("gallery-item",{
 var app = new Vue({
   el: '#mySite',
   data: myApp,
-  methods: {
-	hello(){
-
+  methods: {	
+	hello(t){
+		this.message = this.tost.next().value;
+		t.target.classList.remove("pointer");
 	},
 	filterCount(tost){			
 		for (const item in this.portfolio.choise) {						
