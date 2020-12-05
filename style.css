@@ -178,6 +178,7 @@ section .wrap {
     display: table;    
     color: #fff;
     padding: 15px;
+    background-color: #ccc;
 }
 .Galery__item div {
     height: 100%;
@@ -191,6 +192,8 @@ section .wrap {
     color: #000;
     cursor: pointer;
 }
+
+.Galery__item.active div,
 .Galery__item div:hover {
     opacity: 1;  
 }
@@ -201,13 +204,13 @@ section .wrap {
 .Galery__item h3:hover {
     text-decoration: underline;
 }
-.Tag-list {
+.Tag_list {
     font-size: 12px;
     margin: 6px 0;
     padding: 0;
     list-style: none;
 }
-.Tag-list li {
+.Tag_list li {
     display: inline-block;
     margin: 0 5px 5px 0;
     padding: 2px 5px;
@@ -222,6 +225,10 @@ section .wrap {
     transition: transform 1s;
 }
 
+
+.pointer {
+    cursor: pointer;
+}
 .pointer::after{
     display: inline;
     content: "◄";

@@ -16,7 +16,7 @@
 	<meta property='og:url' content="https://idragon.space" >
 	<meta property="og:type" content="website">    
     
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109139286-3"></script>
@@ -132,21 +132,14 @@
 			<h2>Portfolio</h2>
 			<gallery>
 				<gallery-filter>
-					<filter-item f-tag="All" v-bind:filtchoise="portfolio.choise.All"></filter-item>
-					<filter-item f-tag="Design" v-bind:filtchoise="portfolio.choise.Design"></filter-item>
-					<filter-item f-tag="Model"  v-bind:filtchoise="portfolio.choise.Model"></filter-item>
-					<filter-item f-tag="Web"  v-bind:filtchoise="portfolio.choise.Web"></filter-item>					
+					<filter-item f-tag="All" :filtchoise="portfolio.choise.All"></filter-item>
+					<filter-item f-tag="Design" :filtchoise="portfolio.choise.Design"></filter-item>
+					<filter-item f-tag="Model"  :filtchoise="portfolio.choise.Model"></filter-item>
+					<filter-item f-tag="Web"  :filtchoise="portfolio.choise.Web"></filter-item>					
 				</gallery-filter>
 				
-				<transition-group name="portfolio-items" class="Galery__list" tag="div" :duration="1000">													
-						<article class="Galery__item" v-for="item in portfolio.items" v-show="portfolio.choise[item.tag] || portfolio.choise.All" v-bind:key="item.id" v-bind:style="{ backgroundColor: item.color }">
-							<div>
-								<h3>{{ item.title }}</h3>
-								<ul class="Tag-list">
-									<li v-for="label in item.labels" >{{ label }}</li>
-								</ul>
-							</div>
-						</article>
+				<transition-group name="portfolio-items" class="Galery__list" tag="div" :duration="1000">
+					<gallery-item v-for="item in portfolio.items" v-show="portfolio.choise[item.tag] || portfolio.choise.All" :key="item.id" :item="item" ></gallery-item>
 				</transition-group>
 			</gallery>
 		</div>

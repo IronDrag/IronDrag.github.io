@@ -1,10 +1,46 @@
 console.log("All systems successful run!");
 
+Vue.component("gallery",{
+	props: [],	
+	template: 	"<div>"+
+					"<slot></slot>"+
+				"</div>"	
+});
+Vue.component("gallery-filter",{
+	inject: ["filterHandler"],
+	props: ['fTag','filtchoise'],
+	template: 	"<ul class=\"Galery_ctrl\">"+
+					"<slot></slot>"+
+				"</ul>",
+});
+Vue.component("filter-item",{
+	inject: ["filterHandler"],	
+	props: ['fTag','filtchoise'],		
+	template: 	"<li :class=\"{ _active: filtchoise }\" @click.exact=\"filterHandler(fTag)\" @click.shift.exact=\"filterHandler(fTag,true)\" >"+
+					"{{ fTag }}"+
+				"</li>",
+});
+
+Vue.component("gallery-item",{
+	props: ['item'],
+	template: 	"<article class=\"Galery__item\" @click=\"tost\" :style=\"{ backgroundColor: item.color }\">"+
+					"<div>"+
+						"<h3>{{ item.title }}</h3>"+
+						"<ul class=\"Tag_list\">"+
+							"<li v-for=\"label in item.labels\" >{{ label }}</li>"+
+						"</ul>"+
+					"</div>"+
+				"</article>",
+	methods:{
+		tost(){}
+	}
+});
+
 var myApp = {
 	loading: true,	
 	gfThx: false,
 	message: 'Tost text',
-	tost: (function *gText(){
+	messages: (function *gText(){
 		yield 'Hello user ;)';
 		yield 'Tost message';
 		return 'Good bye!';
@@ -26,50 +62,12 @@ var myApp = {
 		]
 	} 
   };
-
-Vue.component("gallery",{
-	data(){
-		return {
-			
-		}
-	},
-	props: [],	
-	template: 	"<div>"+
-					"<slot></slot>"+
-				"</div>"
-});
-Vue.component("gallery-filter",{
-	inject: ["filterHandler"],
-	props: ['fTag','filtchoise'],
-	template: 	"<ul class=\"Galery_ctrl\">"+
-					"<slot></slot>"+
-				"</ul>"
-});
-Vue.component("filter-item",{
-	inject: ["filterHandler"],	
-	props: ['fTag','filtchoise'],		
-	template: 	"<li v-bind:class=\"{ _active: filtchoise }\" v-on:click.exact=\"filterHandler(fTag)\" v-on:click.shift.exact=\"filterHandler(fTag,true)\" >"+
-					"{{ fTag }}"+
-				"</li>"
-});
-Vue.component("gallery-item",{		
-	props: ['item'],
-	template: 	"<article class=\"Galery__item\" v-for=\"item in portfolio.items\" v-show=\"portfolio.choise[item.tag] || portfolio.choise.All\" v-bind:key=\"item.id\" v-bind:style=\"{ backgroundColor: item.color }\">"+
-					"<div>"+
-						"<h3>{{ item.title }}</h3>"+
-						"<ul class=\"Tag-list\">"+
-							"<li v-for=\"label in item.labels\" >{{ label }}</li>"+
-						"</ul>"+
-					"</div>"+
-				"</article>"
-});
-
 var app = new Vue({
   el: '#mySite',
   data: myApp,
-  methods: {	
+  methods: {
 	hello(t){
-		this.message = this.tost.next().value;
+		this.message = this.messages.next().value;
 		t.target.classList.remove("pointer");
 	},
 	filterCount(tost){			
@@ -138,7 +136,7 @@ document.querySelector(".gform").addEventListener("submit",function(){
 
 document.querySelector("#hidden_iframe").addEventListener("load",function(){if(app.gfThx) {
     /*window.location='/';*/ 
-    setTimeout(function(){ app.gfThx = false; },10000); 
+	setTimeout(function(){ app.gfThx = false; },10000);
 }});
 
 
