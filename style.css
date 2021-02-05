@@ -154,7 +154,7 @@ section .wrap {
     z-index: 777;
 }
 .Galery_ctrl li { 
-    width: 25%;   
+    width: 20%;   
     display: table-cell;    
     cursor: pointer;
 }
