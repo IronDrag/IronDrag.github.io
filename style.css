@@ -239,7 +239,7 @@ section .wrap {
 
 .Img-fill {
     height: 300px;
-    background: linear-gradient(0deg,#fff0 70%,#fff), #f8c8ae url(bg-section.jpg) no-repeat top;
+    background: linear-gradient(0deg,#fff0 70%,#fff), #f8c8ae url(images/bg-section.jpg) no-repeat top;
     background-size: cover;
 }
 
@@ -316,7 +316,7 @@ section h2 {
     height: 400px;
     overflow: hidden;
     position: relative;
-    background: url('map.jpg') center center no-repeat;
+    background: url('images/map.jpg') center center no-repeat;
     background-size: cover;
     cursor: zoom-in;
 }
