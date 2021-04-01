@@ -16,7 +16,7 @@
 	<meta property='og:url' content="https://idragon.space" >
 	<meta property="og:type" content="website">    
     
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue@next"></script> <!-- production build (*.prod.js) when deploying for production. -->
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109139286-3"></script>
@@ -53,18 +53,28 @@
 		<hr>
 		<nav>
 			<a href="#About">About</a> |
-			<a href="#Portfolio">Portfolio</a> | 
-			<a href="#Contact">Contact</a> |
-			<a href="https://github.com/IronDrag">GitHub: IronDrag</a>
+			<div class="sub-nav">
+				<a href="#">Portfolio</a>
+				<nav class="sub-nav_list">
+					<a href="#Portfolio">Web</a>
+					<a href="/design.html">Design</a>
+				</nav>
+			</div> |
+			<a href="#Contact">Contact</a> |			
+			<a href="https://github.com/IronDrag" title="GitHub">IronDrag</a>
 		</nav>
 	</div>
 </header>
 <main id="mySite">
+	<section id="First-screen">
+		<div>
+			<h2>Hello I'm <b>Iron_Drag</b></h2>
+		</div>
+	</section>
 	<section id="About">
-		<div class="wrap">
-			<img src="images/banner.png" alt="Banner" class="img">
+		<div class="wrap">			
 			<h2 v-on:click="hello" class="pointer">About </h2>      
-			<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+			<p class="Note"><b>Note:</b> <i>This example does not work in Internet Explorer 9 and earlier versions.</i></p>
 			<p><b>{{ message }}</b></p>
 			<div class="g@1x2" style="margin-bottom: 30px;">
 				<div class="col">
@@ -82,7 +92,7 @@
 						<li><b>Vue</b> / React / <b>Redux</b> / Backbone</li>					
 						<li><u>jQuery</u></li>
 						<li><b>Bootstrap</b> / UI Kit</li>
-						<li><b>Twig</b> / Pug</li>
+						<li><b>Twig</b> / <b>Pug</b></li>
 						<li><b>Gulp / Webpack</b></li>
 					</ul>
 					<ul>
@@ -151,36 +161,36 @@
 		<div class="wrap">
 			<h2>Contact</h2>
 			<div class="Contact-form__thx" v-if="gfThx">Thanks for filling out the contact form</div>
-			<form class="Contact-form gform" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe">        
-			<div class="Contact-form__name">
-				<label for="gfrm_name">Name: </label>
-				<div><input id="gfrm_name" type="text" name="entry.646620276" placeholder="Your Name" required></div>
-			</div>
-			<div class="Contact-form__email">
-				<label for="gfrm_eml">E-mail: </label>
-				<div><input id="gfrm_eml" type="email" name="emailAddress" placeholder="Your E-mail" required></div>
-			</div>
-			<div class="Contact-form__subject">
-				<label for="gfrm_sbjt">Letter subject: </label>
-				<div>
-					<select id="gfrm_sbjt" required name="entry.22642542">
-						<option value="Web-dev">Web-dev</option>
-						<option value="Programming">Programming</option>
-						<option value="Design">Design</option>
-						<option value="Other">Other</option>
-					</select>
+			<form class="Contact-form gform" @submit="submitForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe">        
+				<div class="Contact-form__name">
+					<label for="gfrm_name">Name: </label>
+					<div><input id="gfrm_name" type="text" name="entry.646620276" placeholder="Your Name" required></div>
 				</div>
-			</div>
-			<div class="Contact-form__message">           
-				<label for="gfrm_msg">Message: </label>
-				<div><textarea id="gfrm_msg" name="entry.1283908172" placeholder="Enter text..." rows="3"></textarea></div>
-			</div>
-			<div class="Contact-form__controls">
-				<button type="submit">Submit</button> <button class="Contact-form__clear" type="reset">Clear form</button> <a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a>    
-			</div>        
+				<div class="Contact-form__email">
+					<label for="gfrm_eml">E-mail: </label>
+					<div><input id="gfrm_eml" type="email" name="emailAddress" placeholder="Your E-mail" required></div>
+				</div>
+				<div class="Contact-form__subject">
+					<label for="gfrm_sbjt">Letter subject: </label>
+					<div>
+						<select id="gfrm_sbjt" required name="entry.22642542">
+							<option value="Web-dev">Web-dev</option>
+							<option value="Programming">Programming</option>
+							<option value="Design">Design</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>
+				</div>
+				<div class="Contact-form__message">           
+					<label for="gfrm_msg">Message: </label>
+					<div><textarea id="gfrm_msg" name="entry.1283908172" placeholder="Enter text..." rows="3"></textarea></div>
+				</div>
+				<div class="Contact-form__controls">
+					<button type="submit">Submit</button> <button class="Contact-form__clear" type="reset">Clear form</button> <a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a>    
+				</div>
 			</form>
 
-			<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" onload=""></iframe>
+			<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" @load="loadForm"></iframe>
 		</div>
 		<div class="Contact__map">
 		</div>
