@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((responce) => responce.json())
         .then((json) => {
           this.portfolio.items = json;
-          console.dir(this.portfolio.items);
         });
     },
     methods: {

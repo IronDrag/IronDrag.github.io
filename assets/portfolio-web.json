@@ -3,24 +3,24 @@
       "id": 1,
       "tag": "Design",
       "title": "Logo",
-      "color": "#597372",
+      "color": "#A68594",
       "labels": ["Design", "Vector", "Logo"]
     },
     {
       "id": 2,
       "tag": "Model",
       "title": "Train",
-      "color": "#D39F8A",
+      "color": "#77688C",
       "labels": ["Model", "Low-poly", "Train"]
     },
-    { "id": 3, "tag": "Web", "title": "Site", "color": "#DAD1C2", "labels": ["Web", "Codding", "Site"] },
-    { "id": 4, "tag": "Web", "title": "Web-dev", "color": "#193441", "labels": ["Web", "CRM", "App"] },
+    { "id": 3, "tag": "Web", "title": "Site", "color": "#312E41", "labels": ["Web", "Codding", "Site"] },
+    { "id": 4, "tag": "Web", "title": "Web-dev", "color": "#fbd3c4", "labels": ["Web", "CRM", "App"] },
     {
       "id": 5,
       "tag": "Design",
       "title": "Design",
-      "color": "#FF7F66",
+      "color": "#EDC2B2",
       "labels": ["Design", "Web", "Site"]
     },
-    { "id": 6, "tag": "Model", "title": "Car", "color": "#91AA9D", "labels": ["Model", "Muscle", "Car"] }
+    { "id": 6, "tag": "Model", "title": "Car", "color": "#D99E91", "labels": ["Model", "Muscle", "Car"] }
   ]
