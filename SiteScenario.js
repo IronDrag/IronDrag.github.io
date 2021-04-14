@@ -1,3 +1,5 @@
+import { gallery, galleryFilter, galleryItem, filterItem } from '/components/gallery.js';
+
 console.log('All systems successful run!');
 const site = {
   gfThx: false,
@@ -112,41 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const app = Vue.createApp(tost);
 
-  app.component('gallery', {
-    props: [],
-    template: '<div>' + '<slot></slot>' + '</div>',
-  });
-
-  app.component('gallery-filter', {
-    inject: ['filterHandler'],
-    props: ['fTag', 'filtchoise'],
-    template: '<ul class="Galery_ctrl">' + '<slot></slot>' + '</ul>',
-  });
-
-  app.component('filter-item', {
-    inject: ['filterHandler'],
-    props: ['fTag', 'filtchoise'],
-    template:
-      '<li :class="{ _active: filtchoise }" @click.exact="filterHandler(fTag)" @click.shift.exact="filterHandler(fTag,true)" >' +
-      '{{ fTag }}' +
-      '</li>',
-  });
-
-  app.component('gallery-item', {
-    props: ['item'],
-    template:
-      '<article class="Galery__item" @click="tost" :style="{ backgroundColor: item.color }">' +
-      '<div>' +
-      '<h3>{{ item.title }}</h3>' +
-      '<ul class="Tag_list">' +
-      '<li v-for="label in item.labels" >{{ label }}</li>' +
-      '</ul>' +
-      '</div>' +
-      '</article>',
-    methods: {
-      tost() {},
-    },
-  });
+  app.component('gallery', gallery);
+  app.component('gallery-filter', galleryFilter);
+  app.component('filter-item', filterItem);
+  app.component('gallery-item', galleryItem);
 
   app.mount('#mySite');
 
