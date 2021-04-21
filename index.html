@@ -16,8 +16,8 @@
 	<meta property='og:url' content="https://idragon.space" >
 	<meta property="og:type" content="website">    
     
-	<script src="https://unpkg.com/vue@3"></script> <!-- production build (*.prod.js) when deploying for production. -->
-	<script src="https://unpkg.com/vue-router@4"></script>
+	<script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script> <!-- production build (*.prod.js) when deploying for production. -->
+	<script src="https://unpkg.com/vue-router@4.0.6/dist/vue-router.global.js"></script>
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109139286-3"></script>
@@ -33,7 +33,7 @@
 		https://developers.google.com/recaptcha/docs/v3
 	-->
 
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/styles/main.css">
 
 	<style>
 		html,body {
@@ -44,7 +44,7 @@
 		}
 	</style>
 </head>
-<body>
+<body id="mySite">
 <div class="overlay-screen">
     <div class="Loading-ico"></div>
 </div>
@@ -55,10 +55,10 @@
 		<nav>
 			<a href="#About">About</a> |
 			<div class="sub-nav">
-				<a href="#">Portfolio</a>
+				<router-link to="">Portfolio</router-link>				
 				<nav class="sub-nav_list">
-					<a href="#Portfolio">Web</a>
-					<a href="/design.html">Design</a>
+					<router-link to="/">Web</router-link>	
+					<router-link to="/design">Design</router-link>
 				</nav>
 			</div> |
 			<a href="#Contact">Contact</a> |			
@@ -66,146 +66,14 @@
 		</nav>
 	</div>
 </header>
-<main id="mySite">
-	<section id="First-screen">
-		<div>
-			<h2>Hello I'm <b>Iron_Drag</b></h2>
-		</div>
-	</section>
-	<section id="About">
-		<div class="wrap">			
-			<h2 v-on:click="hello" class="pointer">About </h2>      
-			<p class="Note"><b>Note:</b> <i>This example does not work in Internet Explorer 9 and earlier versions.</i></p>
-			<p><b>{{ message }}</b></p>
-			<div class="g@1x2" style="margin-bottom: 30px;">
-				<div class="col">
-					<ul>
-						<li><b>PHP</b></li>
-						<li><b>MySQL</b> / <u>Firebase</u></li>
-						<li>XAMP / <u>NodeJS</u></li>
-					</ul>
-					<ul>
-						<li><b>HTML 5</b> / SVG / XML</li>
-						<li><b>JavaScript / ES6 / ES Next</b></li>
-						<li><b>CSS / SCSS / BEM</b></li>
-					</ul>
-					<ul>
-						<li><b>Vue</b> / React / <b>Redux</b> / Backbone</li>					
-						<li><u>jQuery</u></li>
-						<li><b>Bootstrap</b> / UI Kit</li>
-						<li><b>Twig</b> / <b>Pug</b></li>
-						<li><b>Gulp / Webpack</b></li>
-					</ul>
-					<ul>
-						<li><b>Wordpress</b></li>
-						<li>Joomla</li>
-						<li><u>Opencart</u></li>				
-					</ul>
-					<ul>
-						<li><b>Photoshop</b> / <u>Illustrator</u> / <b>Adobe XD</b> / <u>Figma</u></li>
-						<li><u>Blender</u> / Maya / <b>3DsMax</b></li>
-					</ul>
-				</div>
-				<div class="col">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, 
-						but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. 
-						Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
-						but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p>
-				</div>												
-			</div>			
-			<div class="about-design">				
-				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and 
-				I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, 
-				the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, 
-				but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. 
-				Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
-				but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. 
-				To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? 
-				But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, 
-				or one who avoids a pain that produces no resultant pleasure?</p>
-		</div>
-	</section>
-	<section class="Img-fill">
-
-	</section>
-	<section id="Portfolio" class="Portfolio">
-		<div class="wrap">
-			<h2>Portfolio</h2>
-			<gallery>
-				<gallery-filter>
-					<filter-item f-tag="All" :filtchoise="portfolio.choise.All"></filter-item>
-					<filter-item f-tag="Design" :filtchoise="portfolio.choise.Design"></filter-item>
-					<filter-item f-tag="Model"  :filtchoise="portfolio.choise.Model"></filter-item>
-					<filter-item f-tag="Web"  :filtchoise="portfolio.choise.Web"></filter-item>		
-					<li title="Shift+Click - multiple selection">🛈 info</li>
-				</gallery-filter>
-				
-				<transition-group name="portfolio-items" class="Galery__list" tag="div" :duration="1000">
-					<gallery-item v-for="item in portfolio.items" v-show="portfolio.choise[item.tag] || portfolio.choise.All" :key="item.id" :item="item" ></gallery-item>
-				</transition-group>
-			</gallery>
-		</div>
-	</section>
-
-	<section id="Contact">
-		<div class="wrap">
-			<h2>Contact</h2>
-			<div class="Contact-form__thx" v-if="gfThx">Thanks for filling out the contact form</div>
-			<form class="Contact-form gform" @submit="submitForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe">        
-				<div class="Contact-form__name">
-					<label for="gfrm_name">Name: </label>
-					<div><input id="gfrm_name" type="text" name="entry.646620276" placeholder="Your Name" required></div>
-				</div>
-				<div class="Contact-form__email">
-					<label for="gfrm_eml">E-mail: </label>
-					<div><input id="gfrm_eml" type="email" name="emailAddress" placeholder="Your E-mail" required></div>
-				</div>
-				<div class="Contact-form__subject">
-					<label for="gfrm_sbjt">Letter subject: </label>
-					<div>
-						<select id="gfrm_sbjt" required name="entry.22642542">
-							<option value="Web-dev">Web-dev</option>
-							<option value="Programming">Programming</option>
-							<option value="Design">Design</option>
-							<option value="Other">Other</option>
-						</select>
-					</div>
-				</div>
-				<div class="Contact-form__message">           
-					<label for="gfrm_msg">Message: </label>
-					<div><textarea id="gfrm_msg" name="entry.1283908172" placeholder="Enter text..." rows="3"></textarea></div>
-				</div>
-				<div class="Contact-form__controls">
-					<button type="submit">Submit</button> <button class="Contact-form__clear" type="reset">Clear form</button> <a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a>    
-				</div>
-			</form>
-
-			<iframe id="hidden_iframe" name="hidden_iframe" style="display:none;" @load="loadForm"></iframe>
-		</div>
-		<div class="Contact__map">
-		</div>
-	</section>
-
-	<section class="to_top">
-		<div class="wrap"><a href="#top">To top</a></div>
-	</section>
+<main>
+	<router-view></router-view>	
 </main>
 <footer>
 	<div class="wrap">
 		<a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a> <a href="https://github.com/IronDrag">GitHub: IronDrag</a> | 2020
 	</div>
 </footer>
-<script src="SiteScenario.js" type="module"></script>
 </body>
 </html>
+<script src="SiteScenario.js" type="module"></script>

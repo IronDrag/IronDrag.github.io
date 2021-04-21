@@ -1,7 +1,3 @@
-@import 'base.css';
-@import 'tost.css';
-/*@import "struct.css";*/
-
 header,
 footer {
   text-align: center;
@@ -42,7 +38,7 @@ header nav a,
 }
 header nav a[title='GitHub'] {
   padding-left: 30px;
-  background: url(/images/github-logo.svg) 8px center no-repeat;
+  background: url('/images/github-logo.svg') 8px center no-repeat;
   background-size: contain;
 }
 .sub-nav_list a:hover {
@@ -114,6 +110,7 @@ section .wrap {
 
 #First-screen {
   height: 50vh;
+  position: relative;
   background-color: #1f1f1f;
   display: flex;
   justify-content: center;
@@ -228,8 +225,13 @@ section .wrap {
 .portfolio-items-leave-to {
   display: none;
 }
+
+/*.portfolio-items {
+  transition: all 1s;
+}*/
+
 .portfolio-items-move {
-  transition: transform 1s;
+  transition: all 1s;
 }
 
 .pointer {
@@ -323,7 +325,7 @@ section h2 {
   height: 400px;
   overflow: hidden;
   position: relative;
-  background: url('images/map.jpg') center center no-repeat;
+  background: url('/images/map.jpg') center center no-repeat;
   background-size: cover;
   cursor: zoom-in;
 }
