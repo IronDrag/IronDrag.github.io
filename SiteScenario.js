@@ -1,4 +1,5 @@
-import { gallery, galleryFilter, galleryItem, filterItem } from '/components/gallery.js';
+import { mainApp } from '/app.js';
+import { mainPage, designPage } from '/pages/pagesLoader.js';
 
 console.log('All systems successful run!');
 const site = {
@@ -9,116 +10,27 @@ const site = {
 document.body.style.overflow = 'hidden';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tost = {
-    data() {
-      return {
-        portfolio: {
-          choise: {
-            All: true,
-            Design: false,
-            Model: false,
-            Web: false,
-          },
-          items: [],
-        },
-        gfThx: false,
-        message: 'Welcome on my site',
-        messages: (function* () {
-          yield 'Hello';
-          yield 'World';
-          yield 'And Tosters';
-          yield 'Bye bye...';
-        })(),
-      };
-    },
-    created() {
-      fetch('/assets/portfolio-web.json')
-        .then((responce) => responce.json())
-        .then((json) => {
-          this.portfolio.items = json;
-        });
-    },
-    methods: {
-      hello(t) {
-        const gen = this.messages.next();
-        if (gen.done) {
-          t.target.classList.remove('pointer');
-          return;
-        }
-        this.message = gen.value;
-      },
-      filterCount(tost) {
-        for (const item in this.portfolio.choise) {
-          if (this.portfolio.choise[item] && item != tost) return true;
-        }
-        return false;
-      },
-      filterHandler(item, modK) {
-        if (item == 'All') {
-          this.portfolio.choise = { All: true, Design: false, Model: false, Web: false };
-          return true;
-        }
-
-        this.portfolio.choise.All = false;
-
-        if (!modK) {
-          let tost = { All: false, Design: false, Model: false, Web: false };
-          tost[item] = true;
-          this.portfolio.choise = tost;
-          return true;
-        } else {
-          if (
-            this.portfolio.choise.All == false &&
-            this.portfolio.choise[item] == true &&
-            this.filterCount(item)
-          ) {
-            this.portfolio.choise[item] = false;
-            return true;
-          } else {
-            this.portfolio.choise[item] = true;
-            return true;
-          }
-        }
-      },
-      submitForm(event) {
-        setTimeout(() => {
-          event.target.reset();
-        }, 1000);
-
-        this.gfThx = true;
-        gtag('event', 'contact');
-      },
-      loadForm() {
-        if (this.gfThx) {
-          //window.location='/';
+  const appRouter = VueRouter.createRouter({
+    scrollBehavior: function (to, from, savedPosition) {
+      if (to.hash) {
+        return new Promise((resolve, reject) => {
           setTimeout(() => {
-            this.gfThx = false;
-          }, 10000);
-        }
-      },
+            resolve({ el: to.hash, behavior: 'smooth' });
+          }, 500);
+        });
+      } else {
+        return { x: 0, y: 0 };
+      }
     },
-    watch: {
-      choise(tost) {
-        for (const item in this.portfolio.choise) {
-          if (this.portfolio.choise[item] && item != tost) return true;
-        }
-        return false;
-      },
-    },
-    provide: function () {
-      return {
-        filterHandler: this.filterHandler,
-      };
-    },
-  };
+    history: VueRouter.createWebHistory(),
+    routes: [
+      { path: '/', component: mainPage },
+      { path: '/design', component: designPage },
+    ],
+  });
 
-  const app = Vue.createApp(tost);
-
-  app.component('gallery', gallery);
-  app.component('gallery-filter', galleryFilter);
-  app.component('filter-item', filterItem);
-  app.component('gallery-item', galleryItem);
-
+  const app = Vue.createApp(mainApp);
+  app.use(appRouter);
   app.mount('#mySite');
 
   let ovrlScrn = document.querySelector('.overlay-screen');
