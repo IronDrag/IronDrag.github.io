@@ -52,17 +52,17 @@
 	<div class="wrap">
 		<h1><a href="/">iDragon.space</a></h1>
 		<hr>
-		<nav>
-			<a href="/#About">About</a> |
+		<nav class="main-nav">
+			<router-link to="/#About">About</router-link> |
 			<div class="sub-nav">
-				<router-link to="">Portfolio</router-link>				
+				<router-link to="#Portfolio">Portfolio</router-link>				
 				<nav class="sub-nav_list">
 					<router-link to="/">Web</router-link>	
 					<router-link to="/design">Design</router-link>
 				</nav>
 			</div> |
-			<a href="/#Contact">Contact</a> |			
-			<a href="https://github.com/IronDrag" title="GitHub">IronDrag</a>
+			<router-link to="/#Contact">Contact</router-link> |			
+			<a href="https://github.com/IronDrag" title="GitHub" target="_blank">IronDrag</a>
 		</nav>
 	</div>
 </header>

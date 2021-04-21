@@ -4,7 +4,7 @@ import { mainPage, designPage } from '/pages/pagesLoader.js';
 console.log('All systems successful run!');
 const site = {
   gfThx: false,
-  subMenu: false,
+  //subMenu: false,
 };
 
 document.body.style.overflow = 'hidden';
@@ -42,8 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflowY = 'auto';
   }, 3000);
 
-  document.querySelector('.sub-nav').addEventListener('click', function () {
-    site.subMenu = !site.subMenu;
-    this.classList.toggle('_active', site.subMenu);
-  });
+  /* document.querySelector('.sub-nav').addEventListener(
+    'mouseover',
+    function () {
+      site.subMenu = !site.subMenu;
+      this.classList.toggle('_active', site.subMenu);
+    },
+    { capture: true },
+  ); */
 });

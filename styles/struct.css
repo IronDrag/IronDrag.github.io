@@ -13,7 +13,7 @@ footer * {
 
 header .wrap {
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 header hr {
   display: none;
@@ -27,14 +27,22 @@ header a {
   display: inline-block;
   text-decoration: none;
 }
-header > nav {
-  margin: 15px 0;
+.main-nav {
+  height: var(--top-nav);
+  line-height: var(--top-nav-height);
 }
 header nav a,
 .sub-nav {
   display: inline-block;
   position: relative;
   padding: 0 15px;
+  line-height: normal;
+}
+.sub-nav {
+  height: 100%;
+}
+.sub-nav:hover nav {
+  display: block;
 }
 header nav a[title='GitHub'] {
   padding-left: 30px;
