@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --top-nav-height: 79px;
+}
+
+html,
+body {
+  position: relative;
+  font-family: Arial;
+  scroll-behavior: smooth;
+}
+
+.Img-fill {
+  height: 300px;
+  background: linear-gradient(0deg, #fff0 70%, #fff),
+    #f8c8ae url('/assets/images/bg-section.jpg') no-repeat top;
+  background-size: cover;
+}
+
+p {
+  padding-right: 30px;
+}
+
+blockquote.Note {
+  padding: 10px 0;
+  padding-left: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #f3f3f3;
+  border-left: 5px solid;
+}
+
+._on {
+  display: block;
+  opacity: 1;
+}
+
+.img {
+  /*height: 10em;*/
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  margin: 1em 0;
+  background-color: #ddd;
+  /*outline: solid #ccc;*/
+}
+
+.g\@1x2,
+.g\@1x4 {
+  display: table;
+}
+.g\@1x2 .col,
+.g\@1x4 .col {
+  display: table-cell;
+  vertical-align: top;
+}
+.g\@1x2 .col {
+  width: 50%;
+}
+.g\@1x4 .col {
+  width: 25%;
+}

@@ -1,11 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TestWork</title>
-    <link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="index, follow">
+
+
+	<title>iDragon.space</title>
+	<meta name="description" content="My personal free GitHub portfolio">
+	<link rel="shortcut icon" href="https://irondrag.github.io/favicon.ico" type="image/x-icon">
+	<meta name="theme-color" content="#24292e">
+
+	<meta property="og:type" content="website">
+	<meta property='og:url' content="https://irondrag.github.io" >
+	<meta property='og:title' content="iDragon Portfolio" >	
+	<meta property='og:description' content="My personal free GitHub portfolio" >
+	<meta property='og:image' content="https://irondrag.github.io/images/prev.jpg" >
+	    
+    
+	<script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script> <!-- production build (*.prod.js) when deploying for production. -->
+	<script src="https://unpkg.com/vue-router@4.0.6/dist/vue-router.global.js"></script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109139286-3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-109139286-3');
+	</script>
+	
+	<!-- 
+		TODO(Iron_Drag):Integrated reCaptcha to site 
+		https://developers.google.com/recaptcha/docs/v3
+	-->
+
+	<script async src="mainScenario.js" type="module"></script>
+	<script defer src="app.js" type="module"></script>
+
+	<link rel="stylesheet" href="app/styles/main.css">
+	<style>
+		html,body { height: 100%; width: 100%; padding: 0; margin: 0; }
+	</style>
+
 </head>
-<body>
-<h1>Toster</h1>
-<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+<body id="mySite">
+<div class="overlay-screen">
+    <div class="Loading-ico"></div>
+</div>
+<header>
+	<div class="wrap">
+		<h1><a href="/">iDragon.space</a></h1>
+		<hr>
+		<nav class="main-nav">
+			<router-link to="/#About">About</router-link> |
+			<div class="sub-nav">
+				<router-link to="#Portfolio">Portfolio</router-link>				
+				<nav class="sub-nav_list">
+					<router-link to="/#Portfolio">Web</router-link>	
+					<router-link to="/design#Portfolio">Design</router-link>
+				</nav>
+			</div> |
+			<router-link to="/#Contact">Contact</router-link> |			
+			<a href="https://github.com/IronDrag" title="GitHub" target="_blank">IronDrag</a>
+		</nav>
+	</div>
+</header>
+<main>
+	<router-view></router-view>
+</main>
+<footer>
+	<div class="wrap">
+		<a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a> <a href="https://github.com/IronDrag">GitHub: IronDrag</a> | <output>2022</output>
+	</div>
+</footer>
 </body>
 </html>
