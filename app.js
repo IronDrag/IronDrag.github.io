@@ -1,26 +1,7 @@
-import { mainPage, designPage } from './app/pages/pagesLoader.js';
+import { appRouter } from './app/router.js';
 
 (function(){
   let ovrlScrn = null;
-
-  const appRouter = VueRouter.createRouter({
-    scrollBehavior: function (to, from, savedPosition) {
-      if (to.hash) {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve({ el: to.hash, behavior: 'smooth' });
-          }, 500);
-        });
-      } else {
-        return { x: 0, y: 0 };
-      }
-    },
-    history: VueRouter.createWebHistory(),
-    routes: [
-      { path: '/', component: mainPage },
-      { path: '/design', component: designPage },
-    ],
-  });
 
   const mainApp = {
   name: 'App',
@@ -64,7 +45,7 @@ import { mainPage, designPage } from './app/pages/pagesLoader.js';
       return false;
     },
   },
-}
+};
   const app = Vue.createApp(mainApp);
   app.use(appRouter);
   app.mount('#mySite');
