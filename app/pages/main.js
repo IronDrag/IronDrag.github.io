@@ -40,8 +40,7 @@ export const mainPage = {
   </section-slider>
   <section id="About">
   <div class="wrap">			
-      <h2 v-on:click="hello" class="pointer">About </h2>      
-      <blockquote class="Note"><b>Note:</b> <i>This example does not work in Internet Explorer 9 and earlier versions.</i></blockquote>
+      <h2 v-on:click="hello" class="pointer">About</h2>
       <p><b>{{ message }}</b></p>
       <div class="g@1x2" style="margin-bottom: 30px;" data-nosnippet>
           <section class="col">
@@ -77,7 +76,7 @@ export const mainPage = {
           </section>
           <div class="col">
               <p>I'm interested in the partnership, full-time employment and remote job. 
-                  Contact me by <a href="/#Contact" ><u>form below</u></a>, when i will answer you or send my full CV within 1-2 working days.
+                  Contact me by <a href="/#Contact" ><u>form below</u></a>, when i will answer you or send my full CV within 1–2&nbsp;working days.
               </p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
