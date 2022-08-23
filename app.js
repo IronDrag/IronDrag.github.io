@@ -8,20 +8,22 @@ import { appRouter } from './app/router.js';
   data() {
     return {
       gfThx: false,
+      greeting: "Good night",
       //choise: 'hello',
     };
   },
   mounted(){
   	ovrlScrn = document.querySelector('.overlay-screen');
-	ovrlScrn.style.opacity = 0;
-	setTimeout(function () {
-          ovrlScrn.style.display = 'none';
-          document.body.style.overflowY = 'auto';
-        }, 500);
+    ovrlScrn.style.opacity = 0;
+    setTimeout(function () {
+      ovrlScrn.style.display = 'none';
+      document.body.style.overflowY = 'auto';
+    }, 500);
   }, 
   methods: {
     submitForm(event) {
-      setTimeout(() => {
+      debugger;
+      setTimeout(function(){
         event.target.reset();
       }, 1000);
 
@@ -46,7 +48,8 @@ import { appRouter } from './app/router.js';
     },
   },
 };
-  const app = Vue.createApp(mainApp);
-  app.use(appRouter);
-  app.mount('#mySite');
+
+const app = Vue.createApp(mainApp).use(appRouter);
+app.mount('#mySite');
+
 })();

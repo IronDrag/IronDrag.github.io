@@ -12,8 +12,10 @@ export const mainPage = {
     filterItem,
     sectionContact,
   },
+  props: ["gfthx"],
   data() {
     return {
+      toster: "Toster hoster",
       message: 'Welcome on my site',
       messages: (function* () {
         yield 'Hello';
@@ -24,6 +26,9 @@ export const mainPage = {
     };
   },
   methods: {
+    tost() {
+      console.log("hfghfghfghfg");
+    },
     hello(t) {
       const gen = this.messages.next();
       if (gen.done) {
@@ -35,6 +40,7 @@ export const mainPage = {
     },
   },
   template: `
+  <main>
   <section-slider>
     <h2>Hello I'm <b>Iron_Drag</b></h2>
   </section-slider>
@@ -99,6 +105,7 @@ export const mainPage = {
           To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? 
           But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, 
           or one who avoids a pain that produces no resultant pleasure?</p>
+      </div>
   </div>
 </section>
 
@@ -124,10 +131,11 @@ export const mainPage = {
       </gallery>
   </div>
 </section>
-
-<section-contact />
+{{ gfthx }}
+<section-contact :gfThx="gfthx" @toster="$emit('submitForm')" />
 
 <section class="to_top">
   <div class="wrap"><a href="#top">To top</a></div>
-</section>`,
+</section>
+</main>`,
 };

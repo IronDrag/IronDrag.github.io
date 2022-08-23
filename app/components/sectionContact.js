@@ -1,10 +1,13 @@
+const formAdress = "https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true";
+
 export const sectionContact = {
   name: 'sectionContact',
+  props: ["gfThx"],   
   template: `<section id="Contact">
     <div class="wrap">
         <h2>Contact</h2>
         <div class="Contact-form__thx" v-if="gfThx">Thanks for filling out the contact form</div>
-        <form class="Contact-form gform" @submit="submitForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfN--Lqa4pyV6veTMT3L3ay7JF3jg7N6mR2O35pI9H5qY8XuA/formResponse?embedded=true" method="POST" target="hidden_iframe">        
+        <form class="Contact-form gform" @submit="$emit('toster')" action="${formAdress}" method="POST" target="hidden_iframe">        
             <div class="Contact-form__name">
                 <label for="gfrm_name">Name: </label>
                 <div><input id="gfrm_name" type="text" name="entry.646620276" placeholder="John Doe" required></div>

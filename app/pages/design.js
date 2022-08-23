@@ -4,7 +4,10 @@ export const designPage = {
   components: {
     sectionSlider: sectionSlider,
   },
-  template: `<section-slider>
+  template: `
+<main>
+<section-slider>
   <h2>My design portfolio</h2>
-</section-slider>`,
+</section-slider>
+</main>`,
 };

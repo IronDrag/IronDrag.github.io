@@ -8,7 +8,7 @@
 
 	<title>iDragon.space</title>
 	<meta name="description" content="My personal free GitHub portfolio">
-	<link rel="shortcut icon" href="https://irondrag.github.io/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<meta name="theme-color" content="#24292e">
 
 	<meta property="og:type" content="website">
@@ -37,13 +37,13 @@
 	<script async src="mainScenario.js" type="module"></script>
 	<script defer src="app.js" type="module"></script>
 
-	<link rel="stylesheet" href="app/styles/main.css">
+	<link rel="stylesheet" href="app/styles/main-page.css">
 	<style>
-		html,body { height: 100%; width: 100%; padding: 0; margin: 0; }
+		html, body { height: 100%; width: 100%; padding: 0; margin: 0; }
 	</style>
 
 </head>
-<body id="mySite">
+<body id="mySite" @submit-form="submitForm">
 <div class="overlay-screen">
 	<noscript><blockquote class="Note"><b>Note:</b> <i>This example does not work in Internet Explorer 9 and earlier versions.</i></blockquote></noscript>
     <div class="Loading-ico"></div>
@@ -66,9 +66,9 @@
 		</nav>
 	</div>
 </header>
-<main>
-	<router-view></router-view>
-</main>
+
+<router-view :gfThx="gfThx"></router-view>
+
 <footer>
 	<div class="wrap">
 		<a href="mailto:info.irondragon@gmail.com">info.irondragon@gmail.com</a> <a href="https://github.com/IronDrag">GitHub: IronDrag</a> | <output>2022</output>
