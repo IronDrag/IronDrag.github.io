@@ -79,7 +79,7 @@ export const mainPage = {
               <p>I'm interested in the partnership, full-time employment and remote job. 
                   Contact me by <a href="/#Contact" ><u>form below</u></a>, when i will answer you or send my full CV within 1-2 working days.
               </p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              <p style="color: #d1d1d1;" >Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -90,7 +90,7 @@ export const mainPage = {
                   but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p>
           </div>												
       </div>			
-      <div class="about-design">				
+      <div class="about-design" style="color: #d1d1d1;" >				
           <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and 
           I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, 
           the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, 
